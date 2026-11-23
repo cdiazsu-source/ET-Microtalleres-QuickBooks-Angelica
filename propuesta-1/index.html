@@ -22,7 +22,7 @@
     --mono:Consolas,'SFMono-Regular',Menlo,monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{width:1080px;height:3669px;background:var(--canvas);font-family:var(--font);color:var(--navy);position:relative;overflow:hidden}
+  body{width:1080px;height:3563px;background:var(--canvas);font-family:var(--font);color:var(--navy);position:relative;overflow:hidden}
 
   /* ---------- Encabezado de boletín ---------- */
   .top{display:flex;height:112px;background:#fff}
@@ -146,13 +146,13 @@
   .intro .tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
   .intro .tags span{background:var(--tint);color:var(--navy);border-radius:999px;padding:9px 20px;font-weight:700;font-size:23px}
 
-  .go{display:flex;align-items:center;gap:26px;background:var(--cyan);color:var(--navy);border-radius:34px;padding:30px 36px;box-shadow:0 10px 0 var(--navy);text-decoration:none}
+  .go{display:flex;align-items:center;gap:26px;margin-top:22px;background:var(--cyan);color:var(--navy);border-radius:34px;padding:30px 36px;box-shadow:0 10px 0 var(--navy);text-decoration:none}
   .go .gt{flex:1}.go small{display:block;font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:.04em}
   .go b{display:block;font-weight:800;font-size:46px;line-height:1.05;letter-spacing:-.01em}
   .go .ga{flex:none;width:76px;height:76px;border-radius:50%;background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800}
   /* ---------- Pie navy ---------- */
   .banner{position:absolute;left:0;right:0;bottom:0;width:1080px;display:block}
-  .foot{position:absolute;left:0;right:0;bottom:76px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:40px 56px 40px}
+  .foot{position:absolute;left:0;right:0;bottom:76px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:36px 56px 36px}
   .foot .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px}
   .foot small{display:block;font-family:var(--mono);font-size:20px;font-weight:700;color:var(--cyan);letter-spacing:.04em}
   .foot span.t{display:block;font-size:26px;line-height:1.25;margin-top:6px}
@@ -268,10 +268,10 @@
 </section>
 
 <footer class="foot">
-  <div class="cta" style="margin-top:0;border-top:0;padding-top:0;justify-content:flex-end">
+  <div class="cta" style="margin-top:0;border-top:0;padding-top:0;justify-content:space-between">
+  <a class="follow" href="https://www.linkedin.com/in/uifce/" style="display:flex;align-items:center;gap:18px;color:#fff;text-decoration:none"><svg viewBox="0 0 50 50" role="img" aria-label="LinkedIn" style="width:56px;height:56px;flex:none"><rect width="50" height="50" rx="10" fill="#0A66C2"/><circle cx="12.6" cy="14.6" r="4" fill="#fff"/><rect x="9" y="20.5" width="7.2" height="20" fill="#fff"/><path d="M20.5 20.5h6.9v2.9c1.2-2 3.4-3.4 6.6-3.4 6 0 7.5 3.9 7.5 9.2v11.3h-7.2V30.8c0-2.2-.4-3.9-2.6-3.9-2.4 0-3.2 1.7-3.2 4.2v9.4h-7z" fill="#fff"/></svg><span style="font-size:30px;font-weight:800;line-height:1.1">Síguenos en LinkedIn<small style="display:block;font-family:var(--mono);font-size:20px;font-weight:400;color:var(--cyan);margin-top:4px">linkedin.com/in/uifce</small></span></a>
     <div class="contact"><strong>uniic_bog@unal.edu.co</strong><br>Tel. 316 5000, ext. 12301</div>
   </div>
-  <a class="follow" href="https://www.linkedin.com/in/uifce/" style="display:flex;align-items:center;gap:18px;margin-top:28px;padding-top:24px;border-top:2px solid rgba(255,255,255,.2);color:#fff;text-decoration:none"><svg viewBox="0 0 50 50" role="img" aria-label="LinkedIn" style="width:56px;height:56px;flex:none"><rect width="50" height="50" rx="10" fill="#0A66C2"/><circle cx="12.6" cy="14.6" r="4" fill="#fff"/><rect x="9" y="20.5" width="7.2" height="20" fill="#fff"/><path d="M20.5 20.5h6.9v2.9c1.2-2 3.4-3.4 6.6-3.4 6 0 7.5 3.9 7.5 9.2v11.3h-7.2V30.8c0-2.2-.4-3.9-2.6-3.9-2.4 0-3.2 1.7-3.2 4.2v9.4h-7z" fill="#fff"/></svg><span style="font-size:30px;font-weight:800;line-height:1.1">Síguenos en LinkedIn<small style="display:block;font-family:var(--mono);font-size:20px;font-weight:400;color:var(--cyan);margin-top:4px">linkedin.com/in/uifce</small></span></a>
 </footer>
 <img class="banner" src="assets/banner-unal-fce.png" alt="Facultad de Ciencias Económicas, Sede Bogotá · UIFCE · Universidad Nacional de Colombia">
 
