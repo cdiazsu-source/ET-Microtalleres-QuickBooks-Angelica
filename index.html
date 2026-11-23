@@ -44,11 +44,11 @@
 <main>
   <section class="panel" id="p1" role="tabpanel" aria-labelledby="tab-1">
     <div class="actions"><a href="propuesta-1/infografia.png" download>Descargar PNG ↓</a></div>
-    <div class="frame" id="frame1"><iframe id="if1" src="propuesta-1/index.html" title="Propuesta 1" scrolling="no" height="3399"></iframe></div>
+    <div class="frame" id="frame1"><iframe id="if1" src="propuesta-1/index.html" title="Propuesta 1" scrolling="no" width="1080" height="3563"></iframe></div>
   </section>
   <section class="panel" id="p2" role="tabpanel" aria-labelledby="tab-2" hidden>
     <div class="actions"><a href="propuesta-2/infografia.png" download>Descargar PNG ↓</a></div>
-    <div class="frame" id="frame2"><iframe id="if2" src="propuesta-2/index.html" title="Propuesta 2" scrolling="no" width="1080" height="4542"></iframe></div>
+    <div class="frame" id="frame2"><iframe id="if2" src="propuesta-2/index.html" title="Propuesta 2" scrolling="no" width="1080" height="4296"></iframe></div>
   </section>
   <section class="panel" id="p3" role="tabpanel" aria-labelledby="tab-3" hidden>
     <div class="actions"><a href="propuesta-3/infografia.png" download>Descargar PNG ↓</a></div>
@@ -66,7 +66,7 @@
     var cw=document.documentElement.clientWidth;
     [1,2,3,4].forEach(function(n){
       var w=SIZES[n][0],h=SIZES[n][1],k=Math.min(cw,w)/w,f=document.getElementById('frame'+n),i=document.getElementById('if'+n);
-      i.style.width=w+'px'; i.style.transform='scale('+k+')'; f.style.width=(w*k)+'px'; f.style.height=(h*k)+'px';
+      i.style.width=w+'px'; i.style.height=h+'px'; i.style.transform='scale('+k+')'; f.style.width=(w*k)+'px'; f.style.height=(h*k)+'px';
     });
   }
   function show(n,push){
