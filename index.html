@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Microtaller QuickBooks · Propuestas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#000066;--blue:#1D1DA5;--lila:#6666FF;--cyan:#3ED3FF;--canvas:#F5F5FF;--tint:#E6E6FF;--soft:#4D4D94;
+    --font:'Ancizar Sans',Arial,Helvetica,sans-serif;--mono:Consolas,'SFMono-Regular',Menlo,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--canvas);font-family:var(--font);color:var(--navy)}
+  header{position:sticky;top:0;z-index:10;background:var(--navy);border-bottom:4px solid var(--cyan);
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:12px 16px}
+  .brand{color:#fff;font-weight:800;font-size:18px;line-height:1.1;margin-right:auto}
+  .brand small{display:block;font-family:var(--mono);font-weight:400;font-size:12px;color:var(--cyan);margin-top:3px}
+  nav{display:flex;gap:8px;background:rgba(255,255,255,.12);padding:5px;border-radius:999px}
+  nav button{font:inherit;font-weight:700;font-size:15px;border:0;cursor:pointer;border-radius:999px;padding:9px 20px;background:transparent;color:#fff}
+  nav button:hover{background:rgba(255,255,255,.14)}
+  nav button[aria-selected="true"]{background:var(--cyan);color:var(--navy)}
+  nav button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+  main{padding:24px 0 48px}
+  .panel[hidden]{display:none}
+  .frame{margin:0 auto;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,102,.18)}
+  .frame iframe{border:0;width:1080px;display:block;transform-origin:0 0}
+  .actions{max-width:1080px;margin:0 auto 16px;padding:0 16px;display:flex;justify-content:flex-end}
+  .actions a{font-family:var(--mono);font-size:14px;color:var(--blue);font-weight:700}
+  .empty{max-width:720px;margin:48px auto;padding:56px 24px;text-align:center;border:3px dashed var(--lila);border-radius:28px;background:#fff}
+  .empty h2{font-size:34px;font-weight:800}
+  .empty p{margin-top:10px;font-family:var(--mono);color:var(--soft);font-size:15px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Microtaller UIFCE · QuickBooks<small>// propuestas de infografía</small></div>
+  <nav role="tablist" aria-label="Propuestas">
+    <button role="tab" id="tab-1" aria-controls="p1" aria-selected="true" data-p="1">Propuesta 1</button>
+    <button role="tab" id="tab-2" aria-controls="p2" aria-selected="false" data-p="2">Propuesta 2</button>
+  </nav>
+</header>
+<main>
+  <section class="panel" id="p1" role="tabpanel" aria-labelledby="tab-1">
+    <div class="actions"><a href="propuesta-1/infografia.png" download>Descargar PNG ↓</a></div>
+    <div class="frame" id="frame1"><iframe id="if1" src="propuesta-1/index.html" title="Propuesta 1" scrolling="no" height="3299"></iframe></div>
+  </section>
+  <section class="panel" id="p2" role="tabpanel" aria-labelledby="tab-2" hidden>
+    <!-- Espacio reservado para la Propuesta 2: reemplaza este bloque (o apunta un iframe a propuesta-2/index.html). -->
+    <div class="empty"><h2>Propuesta 2</h2><p>// próximamente</p></div>
+  </section>
+</main>
+<script>
+  var H=3299, tabs=document.querySelectorAll('nav button'), panels={1:document.getElementById('p1'),2:document.getElementById('p2')};
+  function fit(){
+    var k=Math.min(document.documentElement.clientWidth,1080)/1080, f=document.getElementById('frame1'), i=document.getElementById('if1');
+    i.style.transform='scale('+k+')'; f.style.width=(1080*k)+'px'; f.style.height=(H*k)+'px';
+  }
+  function show(n,push){
+    tabs.forEach(function(b){b.setAttribute('aria-selected',String(b.dataset.p==n))});
+    panels[1].hidden=n!=1; panels[2].hidden=n!=2;
+    if(push) history.replaceState(null,'','#propuesta-'+n);
+    window.scrollTo(0,0);
+  }
+  tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.p,true)})});
+  window.addEventListener('resize',fit); fit();
+  show(location.hash==='#propuesta-2'?2:1,false);
+</script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Infografía Microtaller QuickBooks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Línea gráfica del Boletín UIFCE, paleta C (Manual UIFCE) con más azules.
+     Encabezado de boletín, hojas con tirador, listas agrupadas iOS, control segmentado, etiquetas en monoespaciado. */
+  :root{
+    --navy:#000066;
+    --blue:#1D1DA5;
+    --lila:#6666FF;
+    --yellow:#FFFF00;
+    --canvas:#F5F5FF;
+    --tint:#E6E6FF;
+    --soft:#4D4D94;
+    --cyan:#3ED3FF;
+    --font:'Ancizar Sans',Arial,Helvetica,sans-serif;
+    --mono:Consolas,'SFMono-Regular',Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1080px;height:3299px;background:var(--canvas);font-family:var(--font);color:var(--navy);position:relative;overflow:hidden}
+
+  /* ---------- Encabezado de boletín ---------- */
+  .top{display:flex;height:112px;background:#fff}
+  .top .logo{flex:1;display:flex;align-items:center;padding-left:56px}
+  .top .logo img{height:84px;display:block}
+  .top .tag{width:420px;background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 36px}
+  .top .tag b{font-size:34px;font-weight:800;line-height:1.05}
+  .top .tag span{font-family:var(--mono);font-size:19px;color:var(--cyan);margin-top:6px}
+  .stripe{height:12px;background:var(--cyan)}
+
+  /* ---------- Hero ---------- */
+  .hero{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;height:610px;padding:56px 56px 0;position:relative;overflow:hidden}
+  .mono{font-family:var(--mono);font-size:22px;letter-spacing:.02em}
+  .qb{display:inline-block;background:#fff;border-radius:22px;padding:12px 26px;position:relative;z-index:2}
+  .qb img{height:54px;display:block}
+  h1{font-weight:800;font-size:92px;line-height:1;letter-spacing:-.02em;margin-top:18px;max-width:700px;position:relative;z-index:2}
+  h1 em{font-style:normal;color:var(--yellow)}
+  .robot{position:absolute;right:20px;bottom:70px;height:340px;z-index:1}
+  .chips{display:flex;gap:12px;margin-top:40px;position:relative;z-index:2;flex-wrap:wrap;max-width:760px}
+  .chip{border-radius:999px;padding:11px 22px;font-size:24px;font-weight:700;background:rgba(255,255,255,.14);color:#fff}
+  .chip.on{background:var(--yellow);color:var(--navy)}
+
+  /* ---------- Cinta corresponsabilidad ---------- */
+  .ribbon{position:relative;z-index:5;margin:-62px 56px 0;background:var(--yellow);color:var(--navy);border-radius:28px;
+    padding:26px 32px;display:flex;align-items:center;gap:26px;box-shadow:0 10px 0 var(--navy)}
+  .ribbon .tile{flex:none;width:84px;height:84px;border-radius:22px;background:var(--navy);display:flex;align-items:center;justify-content:center}
+  .ribbon .tile svg{width:50px;height:50px}
+  .ribbon b{font-weight:800;font-size:46px;line-height:1.02;letter-spacing:-.01em;display:block}
+  .ribbon span{font-size:25px;font-weight:500;display:block;margin-top:6px}
+
+  /* ---------- Barras de sección ---------- */
+  .bar-sec{margin:64px 0 0;background:var(--tint);padding:14px 56px;display:flex;justify-content:space-between;align-items:center}
+  .bar-sec .mono{font-weight:700;color:var(--navy)}
+  .bar-sec .mono.r{font-weight:400;color:var(--soft)}
+  .sec{padding:0 56px}
+  h2{font-weight:800;font-size:54px;line-height:1.04;letter-spacing:-.015em;margin-top:26px;color:var(--blue);max-width:900px;text-wrap:balance}
+
+  /* ---------- Sesiones: hojas con tirador ---------- */
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px;position:relative}
+  .card{background:#fff;border-radius:36px;padding:34px 30px 32px;position:relative;box-shadow:0 2px 0 #d9d9f2}
+  .card::before{content:"";position:absolute;top:12px;left:50%;transform:translateX(-50%);width:56px;height:6px;border-radius:6px;background:var(--tint)}
+  .card.s2{background:linear-gradient(160deg,var(--navy),var(--blue));color:#fff}
+  .card.s2::before{background:rgba(255,255,255,.3)}
+  .snum{display:flex;align-items:baseline;justify-content:space-between;margin-top:8px}
+  .snum b{font-weight:800;font-size:66px;line-height:1;letter-spacing:-.02em}
+  .snum small{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--lila)}
+  .s2 .snum small{color:var(--cyan)}
+  .stitle{font-weight:700;font-size:30px;line-height:1.12;margin-top:14px;min-height:102px;color:var(--blue)}
+  .s2 .stitle{color:#fff}
+  .bar{display:flex;gap:4px;margin-top:20px;height:44px}
+  .bar span{display:block;border-radius:8px;min-width:0}
+  .legend{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:11px}
+  .legend li{display:flex;align-items:center;gap:12px;font-size:22px;line-height:1.15}
+  .legend i{flex:none;width:16px;height:16px;border-radius:5px}
+  .legend em{margin-left:auto;font-family:var(--mono);font-style:normal;font-weight:700;white-space:nowrap;font-size:20px}
+  .legend .hl{font-weight:800}
+  .gap{position:absolute;left:50%;top:-20px;transform:translateX(-50%);background:var(--navy);color:#fff;
+    border-radius:999px;padding:9px 22px;font-family:var(--mono);font-size:20px;font-weight:700;white-space:nowrap;z-index:3;box-shadow:0 0 0 7px var(--canvas)}
+  .gap b{color:var(--yellow)}
+
+  .s1 .c1,.s1 .d1{background:#000066}.s1 .c2,.s1 .d2{background:#1D1DA5}.s1 .c3,.s1 .d3{background:#6666FF}
+  .s1 .c4,.s1 .d4{background:#3ED3FF}.s1 .c5,.s1 .d5{background:#C9C9F5}
+  .s2 .c1,.s2 .d1{background:#6666FF}.s2 .c2,.s2 .d2{background:#8C8CFF}.s2 .c3,.s2 .d3{background:#B3B3FF}
+  .s2 .c4,.s2 .d4{background:#3ED3FF}.s2 .c5,.s2 .d5{background:#E6E6FF}
+  .s2 .legend em{color:#fff}
+
+  /* ---------- Control segmentado: el balance ---------- */
+  .seg-wrap{margin:44px 56px 0}
+  .seg-title{display:flex;align-items:baseline;justify-content:space-between;gap:20px}
+  .seg-title b{font-weight:800;font-size:36px;color:var(--blue)}
+  .seg-title .mono{color:var(--soft);font-size:20px}
+  .seg{margin-top:16px;background:var(--tint);border-radius:26px;padding:8px;display:grid;grid-template-columns:1fr auto 1fr;gap:8px}
+  .seg div{background:#fff;border-radius:20px;padding:16px 22px;text-align:center}
+  .seg small{display:block;font-family:var(--mono);font-size:19px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+  .seg b{display:block;font-weight:800;font-size:40px;margin-top:2px;font-variant-numeric:tabular-nums}
+  .seg .eq{background:var(--navy);color:var(--yellow);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:50px;padding:0 28px}
+
+  /* ---------- Lista agrupada iOS ---------- */
+  .list{margin-top:34px;background:#fff;border-radius:32px;overflow:hidden;box-shadow:0 2px 0 #d9d9f2}
+  .row{display:flex;align-items:center;gap:26px;padding:26px 30px;border-top:2px solid var(--tint)}
+  .row:first-child{border-top:0}
+  .row .ic{flex:none;width:92px;height:92px;border-radius:26px;background:var(--tint);display:flex;align-items:center;justify-content:center}
+  .row .ic svg{width:54px;height:54px}
+  .row b{display:block;font-weight:800;font-size:33px;line-height:1.08;color:var(--navy)}
+  .row p{font-size:24px;line-height:1.28;margin-top:6px;color:var(--soft)}
+  .row .chev{margin-left:auto;font-size:44px;color:var(--lila);font-weight:400}
+
+  /* notificación iOS */
+  .note{margin-top:28px;background:#fff;border-radius:28px;padding:22px 26px;display:flex;gap:22px;align-items:flex-start;box-shadow:0 2px 0 #d9d9f2}
+  .note .app{flex:none;width:68px;height:68px;border-radius:18px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--yellow);font-weight:800;font-size:44px}
+  .note small{font-family:var(--mono);font-size:19px;color:var(--soft);letter-spacing:.04em}
+  .note b{display:block;font-weight:800;font-size:28px;color:var(--blue);margin-top:2px}
+  .note p{font-size:24px;line-height:1.28;margin-top:4px;color:#262626}
+
+  /* ---------- Monitora ---------- */
+  .mon{margin-top:8px;background:#fff;border-radius:32px;padding:26px 30px;display:flex;align-items:center;gap:30px;box-shadow:0 2px 0 #d9d9f2}
+  .mon img{flex:none;width:170px;height:170px;border-radius:50%;object-fit:cover;border:6px solid var(--cyan);display:block}
+  .mon small{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--soft);letter-spacing:.04em}
+  .mon b{display:block;font-weight:800;font-size:46px;line-height:1.05;color:var(--navy);margin-top:6px}
+  .mon .pill{display:inline-block;margin-top:14px;background:var(--navy);color:#fff;border-radius:999px;padding:8px 22px;font-weight:700;font-size:24px}
+  .mon .pill em{font-style:normal;color:var(--cyan)}
+
+  /* ---------- Fechas e intro ---------- */
+  .dates{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .dcard{background:#fff;border-radius:28px;padding:24px 28px 28px;box-shadow:0 2px 0 #d9d9f2}
+  .dcard.dark{background:var(--navy);color:#fff;box-shadow:none}
+  .dcard h3{font-weight:800;font-size:40px;line-height:1}
+  .dcard .mono{display:block;font-size:19px;color:var(--soft);margin-top:6px}
+  .dcard.dark .mono{color:var(--cyan)}
+  .dcard .f{margin-top:18px}
+  .dcard .f small{display:block;font-family:var(--mono);font-size:18px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
+  .dcard.dark .f small{color:var(--cyan)}
+  .dcard .f i{display:block;height:54px;margin-top:6px;border:3px dashed var(--lila);border-radius:16px}
+  .dcard.dark .f i{border-color:rgba(255,255,255,.45)}
+  .intro{background:#fff;border-radius:28px;padding:28px 30px;box-shadow:0 2px 0 #d9d9f2}
+  .intro .lead{font-weight:800;font-size:38px;line-height:1.08;color:var(--navy);letter-spacing:-.01em;margin-bottom:14px}
+  .intro p{font-size:29px;line-height:1.3;color:var(--navy)}
+  .intro p b{font-weight:800;color:var(--blue)}
+  .intro .tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  .intro .tags span{background:var(--tint);color:var(--navy);border-radius:999px;padding:9px 20px;font-weight:700;font-size:23px}
+
+  /* ---------- Pie navy ---------- */
+  .banner{position:absolute;left:0;right:0;bottom:0;width:1080px;display:block}
+  .foot{position:absolute;left:0;right:0;bottom:76px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:40px 56px 40px}
+  .foot .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 40px}
+  .foot small{display:block;font-family:var(--mono);font-size:20px;font-weight:700;color:var(--cyan);letter-spacing:.04em}
+  .foot span.t{display:block;font-size:26px;line-height:1.25;margin-top:6px}
+  .foot .cta{margin-top:30px;border-top:2px solid rgba(255,255,255,.2);padding-top:26px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .foot .cta img{height:76px;display:block}
+  .foot .contact{text-align:right;font-size:26px;line-height:1.4}
+  .foot .contact strong{color:var(--yellow);font-weight:700}
+  .btn{display:inline-block;background:var(--cyan);color:var(--navy);border-radius:999px;padding:14px 30px;font-weight:800;font-size:28px}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="logo"><img src="assets/logo-uifce-static-negro.png" alt="Unidad de Informática FCE"></div>
+  <div class="tag"><b>Microtaller UIFCE</b><span>Gratuito · Virtual</span></div>
+</div>
+<div class="stripe"></div>
+
+<header class="hero">
+  <div class="qb"><img src="assets/logo-quickbooks.png" alt="Intuit QuickBooks"></div>
+  <h1>Aprende contabilidad con <em>QuickBooks</em></h1>
+  <div class="chips">
+    <span class="chip on">Gratuito</span>
+    <span class="chip">100 % virtual</span>
+    <span class="chip">2 sesiones</span>
+    <span class="chip">2 h cada una</span>
+  </div>
+  <img class="robot" src="assets/uifcito-cierre.png" alt="Uifcito, el robot de la UIFCE saludando">
+</header>
+
+<div class="ribbon">
+  <div class="tile"><svg viewBox="0 0 50 50" aria-hidden="true"><path d="M12 26l9 9 17-20" fill="none" stroke="#FFFF00" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div>
+    <b>Válido por 10 horas de corresponsabilidad</b>
+    <span>Asiste a las dos sesiones y suma 10 horas.</span>
+  </div>
+</div>
+
+<div class="bar-sec"><span class="mono">01 / Fechas</span><span class="mono r">// 2 sesiones virtuales</span></div>
+<section class="sec">
+  <div class="dates">
+    <div class="dcard"><h3>Sesión 1</h3><span class="mono">// Virtual</span>
+      <div class="f"><small>Fecha</small><i></i></div><div class="f"><small>Hora</small><i></i></div></div>
+    <div class="dcard dark"><h3>Sesión 2</h3><span class="mono">// Virtual</span>
+      <div class="f"><small>Fecha</small><i></i></div><div class="f"><small>Hora</small><i></i></div></div>
+  </div>
+</section>
+
+<div class="bar-sec" style="margin-top:56px"><span class="mono">02 / ¿Qué es QuickBooks?</span><span class="mono r">// Intuit</span></div>
+<section class="sec">
+  <div class="intro">
+    <h3 class="lead">¿Y si la contabilidad de una empresa cupiera en tu navegador?</h3>
+    <p><b>QuickBooks</b> es una plataforma de contabilidad en la nube que digitaliza el ciclo contable: desde el registro de cada operación hasta la organización de las cuentas de la empresa. Es ampliamente adoptada por pequeñas y medianas empresas, y aprenderla te acerca a la práctica profesional.</p>
+    <div class="tags"><span>En la nube</span><span>Desde el navegador</span><span>Sin instalar nada</span></div>
+  </div>
+</section>
+
+<div class="bar-sec" style="margin-top:56px"><span class="mono">03 / Las sesiones</span><span class="mono r">// Facultad de Ciencias Económicas · Sede Bogotá</span></div>
+<section class="sec">
+  <h2>Abre la contabilidad de una empresa en la nube</h2>
+
+  <div class="cols">
+    <div class="gap">entre sesiones: <b>2 a 7 días</b></div>
+
+    <article class="card s1">
+      <div class="snum"><b>Sesión 1</b></div>
+      <div class="stitle">Conoce QuickBooks y abre Crece Digital S.A.S.</div>
+      <div class="bar" aria-hidden="true">
+        <span class="c1" style="flex:10"></span><span class="c2" style="flex:20"></span><span class="c3" style="flex:30"></span><span class="c4" style="flex:45"></span><span class="c5" style="flex:15"></span>
+      </div>
+      <ul class="legend">
+        <li><i class="d1"></i>Bienvenida<em>10 min</em></li>
+        <li><i class="d2"></i>QuickBooks y los ERP<em>20 min</em></li>
+        <li><i class="d3"></i>Cuenta e interfaz<em>30 min</em></li>
+        <li class="hl"><i class="d4"></i>Apertura de la empresa<em>45 min</em></li>
+        <li><i class="d5"></i>Cierre<em>15 min</em></li>
+      </ul>
+    </article>
+
+    <article class="card s2">
+      <div class="snum"><b>Sesión 2</b></div>
+      <div class="stitle">Crea tu plan de cuentas, el capital y el catálogo.</div>
+      <div class="bar" aria-hidden="true">
+        <span class="c1" style="flex:10"></span><span class="c2" style="flex:20"></span><span class="c3" style="flex:35"></span><span class="c4" style="flex:30"></span><span class="c5" style="flex:25"></span>
+      </div>
+      <ul class="legend">
+        <li><i class="d1"></i>Repaso<em>10 min</em></li>
+        <li><i class="d2"></i>Ecuación contable<em>20 min</em></li>
+        <li class="hl"><i class="d3"></i>Cuentas y aporte<em>35 min</em></li>
+        <li><i class="d4"></i>Catálogo<em>30 min</em></li>
+        <li><i class="d5"></i>Repaso final y encuesta final<em>25 min</em></li>
+      </ul>
+    </article>
+  </div>
+  <div class="note" style="margin-top:36px">
+    <div class="app"><svg viewBox="0 0 50 50" width="42" height="42" fill="none" stroke="#FFFF00" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="25" cy="21" r="14"/><path d="M19 21l5 5 8-10M17 33l-4 13 12-6 12 6-4-13"/></svg></div>
+    <div><small>CERTIFICADO · incluido</small><b>Recibe tu certificado de participación</b><p>Compártelo en tu perfil de LinkedIn.</p></div>
+    <svg class="li" viewBox="0 0 50 50" role="img" aria-label="LinkedIn" style="flex:none;margin-left:auto;align-self:center;width:76px;height:76px"><rect width="50" height="50" rx="10" fill="#0A66C2"/><circle cx="12.6" cy="14.6" r="4" fill="#fff"/><rect x="9" y="20.5" width="7.2" height="20" fill="#fff"/><path d="M20.5 20.5h6.9v2.9c1.2-2 3.4-3.4 6.6-3.4 6 0 7.5 3.9 7.5 9.2v11.3h-7.2V30.8c0-2.2-.4-3.9-2.6-3.9-2.4 0-3.2 1.7-3.2 4.2v9.4h-7z" fill="#fff"/></svg>
+  </div>
+</section>
+
+<div class="bar-sec" style="margin-top:56px"><span class="mono">04 / Quién te acompaña</span><span class="mono r">// monitora UIFCE</span></div>
+<section class="sec">
+  <div class="mon">
+    <img src="assets/angelica-cardenas.jpg" alt="Angelica Cárdenas, monitora UIFCE">
+    <div><small>// Tu monitora</small><b>Angelica Cárdenas</b><span class="pill">Estudiante de Economía · <em>Monitora UIFCE</em></span></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="cta" style="margin-top:0;border-top:0;padding-top:0">
+    <div class="btn">Escríbenos para participar</div>
+    <div class="contact"><strong>uniic_bog@unal.edu.co</strong><br>Tel. 316 5000, ext. 12301</div>
+  </div>
+</footer>
+<img class="banner" src="assets/banner-unal-fce.png" alt="Facultad de Ciencias Económicas, Sede Bogotá · UIFCE · Universidad Nacional de Colombia">
+
+</body>
+</html>
