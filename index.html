@@ -37,6 +37,7 @@
   <nav role="tablist" aria-label="Propuestas">
     <button role="tab" id="tab-1" aria-controls="p1" aria-selected="true" data-p="1">Propuesta 1</button>
     <button role="tab" id="tab-2" aria-controls="p2" aria-selected="false" data-p="2">Propuesta 2</button>
+    <button role="tab" id="tab-3" aria-controls="p3" aria-selected="false" data-p="3">Propuesta 3</button>
   </nav>
 </header>
 <main>
@@ -48,26 +49,30 @@
     <div class="actions"><a href="propuesta-2/infografia.png" download>Descargar PNG ↓</a></div>
     <div class="frame" id="frame2"><iframe id="if2" src="propuesta-2/index.html" title="Propuesta 2" scrolling="no" width="1920" height="1080" style="width:1920px"></iframe></div>
   </section>
+  <section class="panel" id="p3" role="tabpanel" aria-labelledby="tab-3" hidden>
+    <div class="actions"><a href="propuesta-3/infografia.png" download>Descargar PNG ↓</a></div>
+    <div class="frame" id="frame3"><iframe id="if3" src="propuesta-3/index.html" title="Propuesta 3" scrolling="no" width="1080" height="3137"></iframe></div>
+  </section>
 </main>
 <script>
-  var tabs=document.querySelectorAll('nav button'), panels={1:document.getElementById('p1'),2:document.getElementById('p2')};
-  var SIZES={1:[1080,3399],2:[1920,1080]};
+  var tabs=document.querySelectorAll('nav button'), panels={1:document.getElementById('p1'),2:document.getElementById('p2'),3:document.getElementById('p3')};
+  var SIZES={1:[1080,3399],2:[1920,1080],3:[1080,3137]};
   function fit(){
     var cw=document.documentElement.clientWidth;
-    [1,2].forEach(function(n){
+    [1,2,3].forEach(function(n){
       var w=SIZES[n][0],h=SIZES[n][1],k=Math.min(cw,w)/w,f=document.getElementById('frame'+n),i=document.getElementById('if'+n);
       i.style.width=w+'px'; i.style.transform='scale('+k+')'; f.style.width=(w*k)+'px'; f.style.height=(h*k)+'px';
     });
   }
   function show(n,push){
     tabs.forEach(function(b){b.setAttribute('aria-selected',String(b.dataset.p==n))});
-    panels[1].hidden=n!=1; panels[2].hidden=n!=2;
+    [1,2,3].forEach(function(i){panels[i].hidden=i!=n});
     if(push) history.replaceState(null,'','#propuesta-'+n);
     window.scrollTo(0,0);
   }
   tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.p,true)})});
   window.addEventListener('resize',fit); fit();
-  show(location.hash==='#propuesta-2'?2:1,false);
+  var m=location.hash.match(/^#propuesta-([123])$/);show(m?+m[1]:1,false);
 </script>
 </body>
 </html>
