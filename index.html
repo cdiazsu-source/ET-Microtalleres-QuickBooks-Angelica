@@ -42,7 +42,7 @@
 <main>
   <section class="panel" id="p1" role="tabpanel" aria-labelledby="tab-1">
     <div class="actions"><a href="propuesta-1/infografia.png" download>Descargar PNG ↓</a></div>
-    <div class="frame" id="frame1"><iframe id="if1" src="propuesta-1/index.html" title="Propuesta 1" scrolling="no" height="3299"></iframe></div>
+    <div class="frame" id="frame1"><iframe id="if1" src="propuesta-1/index.html" title="Propuesta 1" scrolling="no" height="3399"></iframe></div>
   </section>
   <section class="panel" id="p2" role="tabpanel" aria-labelledby="tab-2" hidden>
     <!-- Espacio reservado para la Propuesta 2: reemplaza este bloque (o apunta un iframe a propuesta-2/index.html). -->
@@ -50,7 +50,7 @@
   </section>
 </main>
 <script>
-  var H=3299, tabs=document.querySelectorAll('nav button'), panels={1:document.getElementById('p1'),2:document.getElementById('p2')};
+  var H=3399, tabs=document.querySelectorAll('nav button'), panels={1:document.getElementById('p1'),2:document.getElementById('p2')};
   function fit(){
     var k=Math.min(document.documentElement.clientWidth,1080)/1080, f=document.getElementById('frame1'), i=document.getElementById('if1');
     i.style.transform='scale('+k+')'; f.style.width=(1080*k)+'px'; f.style.height=(H*k)+'px';
