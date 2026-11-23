@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1920">
+<title>Microtaller QuickBooks · Propuesta 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#000066;--blue:#1D1DA5;--cyan:#3ED3FF;--gold:#F7C32E;--sky:#5CC9F5;
+    --font:'Ancizar Sans',Arial,Helvetica,sans-serif;--mono:Consolas,'SFMono-Regular',Menlo,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1920px;height:1080px;position:relative;overflow:hidden;font-family:var(--font);color:var(--navy);
+    background:
+      radial-gradient(circle at 18% 30%,rgba(62,211,255,.22),transparent 38%),
+      radial-gradient(circle at 85% 85%,rgba(102,102,255,.35),transparent 45%),
+      linear-gradient(135deg,#00004d,#0a0a8c 55%,#1D1DA5)}
+  /* cuadrícula de la línea gráfica */
+  body::before{content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.10) 3px,transparent 3px),linear-gradient(90deg,rgba(255,255,255,.10) 3px,transparent 3px);
+    background-size:112px 112px;background-position:30px 20px;
+    -webkit-mask-image:radial-gradient(ellipse at 30% 40%,#000 0,transparent 80%);mask-image:radial-gradient(ellipse at 30% 40%,#000 0,transparent 80%)}
+  body::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 2px,transparent 2.5px);background-size:16px 16px;
+    -webkit-mask-image:linear-gradient(110deg,transparent 55%,#000 100%);mask-image:linear-gradient(110deg,transparent 55%,#000 100%)}
+  .abs{position:absolute}
+
+  /* cabecera */
+  .badge{left:110px;top:44px;display:flex;align-items:center;gap:20px;color:#fff;font-weight:800;font-size:34px;line-height:1}
+  .badge svg{width:96px;height:96px}
+  .tags{right:110px;top:56px;display:flex;gap:16px}
+  .tags span{font-weight:800;font-size:30px;border-radius:999px;padding:12px 30px;background:rgba(255,255,255,.14);color:#fff}
+  .tags span.on{background:var(--gold);color:var(--navy)}
+
+  /* ventana-carpeta con la foto */
+  .win{left:150px;top:215px;width:760px;height:640px}
+  .win .back{position:absolute;inset:0;background:#4a4a5a;border-radius:34px;box-shadow:0 18px 0 rgba(0,0,40,.25)}
+  .win .back::before{content:"";position:absolute;left:0;top:-34px;width:360px;height:70px;background:#4a4a5a;border-radius:30px 30px 0 0}
+  .win .screen{position:absolute;left:30px;top:30px;right:30px;bottom:30px;border-radius:14px;background:
+      linear-gradient(rgba(255,255,255,.28) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.28) 2px,transparent 2px),var(--sky);background-size:64px 64px,64px 64px,auto}
+  .win .photo{position:absolute;left:240px;top:56px;width:470px;height:540px;object-fit:cover;object-position:60% 30%;border-radius:26px;object-fit:cover;box-shadow:0 10px 0 rgba(0,0,60,.18)}
+  .robot{left:70px;top:580px;height:420px;z-index:4}
+  .who{left:330px;top:520px;z-index:6;background:var(--navy);color:#fff;border-radius:22px;padding:14px 26px;box-shadow:0 8px 0 rgba(0,0,0,.2)}
+  .who small{display:block;font-family:var(--mono);font-size:20px;color:var(--cyan)}
+  .who b{display:block;font-size:36px;line-height:1.1;font-weight:800}
+
+  /* tarjeta blanca */
+  .card{left:950px;top:225px;width:860px;height:520px;background:#fff;border-radius:44px;padding:90px 50px 30px 64px;z-index:3;box-shadow:0 14px 0 rgba(0,0,60,.22)}
+  .pill{left:920px;top:178px;z-index:5;background:var(--cyan);color:var(--navy);font-weight:800;font-size:38px;border-radius:999px;padding:14px 40px;box-shadow:0 6px 0 rgba(0,0,60,.2)}
+  .card h1{font-size:76px;line-height:.98;font-weight:800;color:var(--gold);letter-spacing:-.015em}
+  .card h1 span{color:var(--navy)}
+  .card h2{font-size:38px;font-weight:800;color:var(--navy);margin-top:18px;line-height:1.1}
+  .card .mon{font-size:32px;font-style:italic;font-weight:500;color:var(--blue);margin-top:16px}
+  .card dl{margin-top:18px;display:grid;gap:8px;font-size:29px;line-height:1.2}
+  .card dt{display:inline;font-weight:800}
+  .card dd{display:inline;font-weight:400}
+  .card .hours{margin-top:22px;display:inline-flex;align-items:center;gap:14px;background:var(--gold);border-radius:18px;padding:10px 22px;font-weight:800;font-size:29px;color:var(--navy)}
+  .slot{display:inline-block;width:170px;height:30px;border-bottom:3px dashed var(--blue);vertical-align:-4px;margin:0 6px}
+
+  /* cuadro cian: software */
+  .soft{left:1470px;top:768px;width:340px;height:168px;background:var(--cyan);border-radius:34px;padding:18px 26px;z-index:4;box-shadow:0 8px 0 rgba(0,0,60,.2)}
+  .soft b{display:block;font-weight:800;font-size:25px;line-height:1.1}
+  .soft img{position:absolute;left:26px;right:26px;bottom:18px;width:288px;background:#fff;border-radius:18px;padding:8px 16px;height:92px;object-fit:contain}
+
+  /* certificado + contacto */
+  .cert{left:950px;top:780px;width:480px;color:#fff;z-index:4;display:flex;gap:18px;align-items:center}
+  .cert svg.m{flex:none;width:76px;height:76px}
+  .cert b{display:block;font-size:27px;font-weight:800;line-height:1.1}
+  .cert span{display:block;font-size:23px;margin-top:4px;color:#cfe9ff}
+  .contact{left:950px;top:880px;z-index:4;color:#fff;font-size:25px;line-height:1.3;width:900px;white-space:nowrap}
+  .contact strong{color:var(--gold)}
+
+  .footer{position:absolute;left:0;bottom:0;width:1920px;display:block;z-index:5}
+</style>
+</head>
+<body>
+
+<div class="abs badge">
+  <svg viewBox="0 0 100 100" aria-hidden="true"><rect x="10" y="16" width="70" height="68" rx="12" fill="#cfe9ff"/><rect x="10" y="16" width="70" height="20" rx="10" fill="#5CC9F5"/><rect x="24" y="6" width="7" height="18" rx="3.5" fill="#fff"/><rect x="58" y="6" width="7" height="18" rx="3.5" fill="#fff"/><path d="M45 42l5.5 11.5 12.5 1.7-9.2 8.7 2.3 12.4L45 70.3 33.9 76.3l2.3-12.4-9.2-8.7 12.5-1.7z" fill="#F7C32E" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/><circle cx="76" cy="74" r="17" fill="#F7C32E"/><path d="M68 74l6 6 10-12" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <span>Microtalleres<br>y eventos</span>
+</div>
+<div class="abs tags"><span class="on">Gratuito</span><span>100 % virtual</span><span>2 sesiones</span></div>
+
+<div class="abs win">
+  <div class="back"></div>
+  <div class="screen"></div>
+  <img class="photo" src="assets/angelica-cardenas.jpg" alt="Angelica Cárdenas, monitora UIFCE">
+</div>
+<img class="abs robot" src="assets/uifcito-cierre.png" alt="Uifcito, el robot de la UIFCE">
+
+<div class="abs pill">Microtalleres UIFCE</div>
+<section class="abs card">
+  <h1>Aprende contabilidad con <span>QuickBooks</span></h1>
+  <p class="mon">Con Angelica Cárdenas, monitora UIFCE</p>
+  <dl>
+    <div><dt>Ubicación:</dt> <dd>Virtual</dd></div>
+    <div><dt>Fecha:</dt> <dd>Sesión 1 <i class="slot"></i> Sesión 2 <i class="slot"></i></dd></div>
+    <div><dt>Duración:</dt> <dd>2 h por sesión</dd></div>
+  </dl>
+  <div class="hours">Válido por 10 horas de corresponsabilidad</div>
+</section>
+
+<div class="abs contact"><strong>uniic_bog@unal.edu.co</strong> · Tel. 316 5000, ext. 12301<br>Síguenos en LinkedIn: <strong>linkedin.com/in/uifce</strong></div>
+<div class="abs cert">
+  <svg class="m" viewBox="0 0 50 50" fill="none" stroke="#F7C32E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="25" cy="21" r="14"/><path d="M19 21l5 5 8-10M17 33l-4 13 12-6 12 6-4-13"/></svg>
+  <div><b>Certificado de participación</b><span>Compártelo en LinkedIn</span></div>
+</div>
+<div class="abs soft"><b>Software / tema utilizado:</b><img src="assets/logo-quickbooks.png" alt="Intuit QuickBooks"></div>
+
+<img class="footer" src="assets/banner-unal-fce.png" alt="Facultad de Ciencias Económicas, Sede Bogotá · UIFCE · Universidad Nacional de Colombia">
+</body>
+</html>
