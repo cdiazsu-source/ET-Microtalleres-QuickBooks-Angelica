@@ -38,6 +38,7 @@
     <button role="tab" id="tab-1" aria-controls="p1" aria-selected="true" data-p="1">Propuesta 1</button>
     <button role="tab" id="tab-2" aria-controls="p2" aria-selected="false" data-p="2">Propuesta 2</button>
     <button role="tab" id="tab-3" aria-controls="p3" aria-selected="false" data-p="3">Propuesta 3</button>
+    <button role="tab" id="tab-4" aria-controls="p4" aria-selected="false" data-p="4">Propuesta 4</button>
   </nav>
 </header>
 <main>
@@ -53,26 +54,30 @@
     <div class="actions"><a href="propuesta-3/infografia.png" download>Descargar PNG ↓</a></div>
     <div class="frame" id="frame3"><iframe id="if3" src="propuesta-3/index.html" title="Propuesta 3" scrolling="no" width="1080" height="3137"></iframe></div>
   </section>
+  <section class="panel" id="p4" role="tabpanel" aria-labelledby="tab-4" hidden>
+    <div class="actions"><a href="propuesta-4/infografia.png" download>Descargar PNG ↓</a></div>
+    <div class="frame" id="frame4"><iframe id="if4" src="propuesta-4/index.html" title="Propuesta 4" scrolling="no" width="1080" height="1904"></iframe></div>
+  </section>
 </main>
 <script>
-  var tabs=document.querySelectorAll('nav button'), panels={1:document.getElementById('p1'),2:document.getElementById('p2'),3:document.getElementById('p3')};
-  var SIZES={1:[1080,3399],2:[1920,1080],3:[1080,3137]};
+  var tabs=document.querySelectorAll('nav button'), panels={1:document.getElementById('p1'),2:document.getElementById('p2'),3:document.getElementById('p3'),4:document.getElementById('p4')};
+  var SIZES={1:[1080,3399],2:[1920,1080],3:[1080,3137],4:[1080,1904]};
   function fit(){
     var cw=document.documentElement.clientWidth;
-    [1,2,3].forEach(function(n){
+    [1,2,3,4].forEach(function(n){
       var w=SIZES[n][0],h=SIZES[n][1],k=Math.min(cw,w)/w,f=document.getElementById('frame'+n),i=document.getElementById('if'+n);
       i.style.width=w+'px'; i.style.transform='scale('+k+')'; f.style.width=(w*k)+'px'; f.style.height=(h*k)+'px';
     });
   }
   function show(n,push){
     tabs.forEach(function(b){b.setAttribute('aria-selected',String(b.dataset.p==n))});
-    [1,2,3].forEach(function(i){panels[i].hidden=i!=n});
+    [1,2,3,4].forEach(function(i){panels[i].hidden=i!=n});
     if(push) history.replaceState(null,'','#propuesta-'+n);
     window.scrollTo(0,0);
   }
   tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.p,true)})});
   window.addEventListener('resize',fit); fit();
-  var m=location.hash.match(/^#propuesta-([123])$/);show(m?+m[1]:1,false);
+  var m=location.hash.match(/^#propuesta-([1234])$/);show(m?+m[1]:1,false);
 </script>
 </body>
 </html>
