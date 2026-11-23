@@ -29,6 +29,16 @@
   .empty{max-width:720px;margin:48px auto;padding:56px 24px;text-align:center;border:3px dashed var(--lila);border-radius:28px;background:#fff}
   .empty h2{font-size:34px;font-weight:800}
   .empty p{margin-top:10px;font-family:var(--mono);color:var(--soft);font-size:15px}
+  .sub{max-width:1080px;margin:0 auto 16px;padding:0 16px;display:flex;gap:8px;flex-wrap:wrap}
+  .sub button{font:inherit;font-weight:700;font-size:14px;border:2px solid var(--lila);cursor:pointer;border-radius:999px;padding:7px 16px;background:#fff;color:var(--navy)}
+  .sub button[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .sp[hidden]{display:none}
+  .gal{max-width:1080px;margin:0 auto;padding:0 16px;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+  .gal.tv{grid-template-columns:repeat(auto-fill,minmax(420px,1fr))}.gal.one{grid-template-columns:1fr}
+  .gal figure{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,102,.15)}
+  .gal img{display:block;width:100%;height:auto}
+  .gal figcaption{display:flex;justify-content:space-between;gap:8px;padding:8px 12px;font-family:var(--mono);font-size:13px}
+  .gal a{color:var(--blue);font-weight:700}
 </style>
 </head>
 <body>
@@ -55,8 +65,16 @@
     <div class="frame" id="frame3"><iframe id="if3" src="propuesta-3/index.html" title="Propuesta 3" scrolling="no" width="1080" height="3631"></iframe></div>
   </section>
   <section class="panel" id="p4" role="tabpanel" aria-labelledby="tab-4" hidden>
+    <div class="sub" role="group" aria-label="Formatos de la propuesta 4">
+      <button data-s="info" aria-pressed="true">Infografía larga</button><button data-s="ig" aria-pressed="false">Instagram (6)</button><button data-s="tv" aria-pressed="false">TV (5)</button><button data-s="ban" aria-pressed="false">Banner formulario</button>
+    </div>
+    <div class="sp" id="sp-info">
     <div class="actions"><a href="propuesta-4/infografia.png" download>Descargar PNG ↓</a></div>
     <div class="frame" id="frame4"><iframe id="if4" src="propuesta-4/index.html" title="Propuesta 4" scrolling="no" width="1080" height="3193"></iframe></div>
+    </div>
+    <div class="sp" id="sp-ig" hidden><div class="gal"><figure><img src="propuesta-4/extras/ig-01.png" alt="Instagram 1/6" loading="lazy"><figcaption><span>Instagram 1/6</span><a href="propuesta-4/extras/ig-01.png" download>PNG ↓</a></figcaption></figure><figure><img src="propuesta-4/extras/ig-02.png" alt="Instagram 2/6" loading="lazy"><figcaption><span>Instagram 2/6</span><a href="propuesta-4/extras/ig-02.png" download>PNG ↓</a></figcaption></figure><figure><img src="propuesta-4/extras/ig-03.png" alt="Instagram 3/6" loading="lazy"><figcaption><span>Instagram 3/6</span><a href="propuesta-4/extras/ig-03.png" download>PNG ↓</a></figcaption></figure><figure><img src="propuesta-4/extras/ig-04.png" alt="Instagram 4/6" loading="lazy"><figcaption><span>Instagram 4/6</span><a href="propuesta-4/extras/ig-04.png" download>PNG ↓</a></figcaption></figure><figure><img src="propuesta-4/extras/ig-05.png" alt="Instagram 5/6" loading="lazy"><figcaption><span>Instagram 5/6</span><a href="propuesta-4/extras/ig-05.png" download>PNG ↓</a></figcaption></figure><figure><img src="propuesta-4/extras/ig-06.png" alt="Instagram 6/6" loading="lazy"><figcaption><span>Instagram 6/6</span><a href="propuesta-4/extras/ig-06.png" download>PNG ↓</a></figcaption></figure></div></div>
+    <div class="sp" id="sp-tv" hidden><div class="gal tv"><figure><img src="propuesta-4/extras/tv-01.png" alt="TV 1/5" loading="lazy"><figcaption><span>TV 1/5</span><a href="propuesta-4/extras/tv-01.png" download>PNG ↓</a></figcaption></figure><figure><img src="propuesta-4/extras/tv-02.png" alt="TV 2/5" loading="lazy"><figcaption><span>TV 2/5</span><a href="propuesta-4/extras/tv-02.png" download>PNG ↓</a></figcaption></figure><figure><img src="propuesta-4/extras/tv-03.png" alt="TV 3/5" loading="lazy"><figcaption><span>TV 3/5</span><a href="propuesta-4/extras/tv-03.png" download>PNG ↓</a></figcaption></figure><figure><img src="propuesta-4/extras/tv-04.png" alt="TV 4/5" loading="lazy"><figcaption><span>TV 4/5</span><a href="propuesta-4/extras/tv-04.png" download>PNG ↓</a></figcaption></figure><figure><img src="propuesta-4/extras/tv-05.png" alt="TV 5/5" loading="lazy"><figcaption><span>TV 5/5</span><a href="propuesta-4/extras/tv-05.png" download>PNG ↓</a></figcaption></figure><figure><a href="propuesta-4/extras/tv-presentacion.html" style="display:block;padding:14px;font-weight:700;color:var(--blue)">▶ Abrir presentación automática para TV</a></figure></div></div>
+    <div class="sp" id="sp-ban" hidden><div class="gal one"><figure><img src="propuesta-4/extras/banner-formulario.png" alt="Banner formulario 1600×400" loading="lazy"><figcaption><span>Banner formulario 1600×400</span><a href="propuesta-4/extras/banner-formulario.png" download>PNG ↓</a></figcaption></figure></div></div>
   </section>
 </main>
 <script>
@@ -78,6 +96,10 @@
   tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.p,true)})});
   window.addEventListener('resize',fit); fit();
   var m=location.hash.match(/^#propuesta-([1234])$/);show(m?+m[1]:1,false);
+  document.querySelectorAll('.sub button').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.sub button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+    ['info','ig','tv','ban'].forEach(function(k){document.getElementById('sp-'+k).hidden=k!==b.dataset.s});
+  })});
 </script>
 </body>
 </html>
