@@ -9,55 +9,60 @@
 <style>
   :root{--navy:#04255f;--blue:#0a4aa8;--cyan:#1EB7FF;--gold:#F7C32E;--font:"Open Sans",system-ui,Arial,sans-serif}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{width:1080px;position:relative;overflow:hidden;background:#073a8c url("assets/bg-grid.svg") no-repeat center top/100% 100%;font-family:var(--font);color:#fff;font-size:26px;line-height:1.35}
+  body{width:1080px;position:relative;overflow:hidden;background:#073a8c;font-family:var(--font);color:#fff;font-size:26px;line-height:1.35}
+  .bg{position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;display:block}
+  .hero,.body,.footer{z-index:1}
   /* puntos de media tinta, como en la referencia */
   body::before{content:"";position:absolute;left:0;top:0;width:560px;height:900px;background-image:radial-gradient(rgba(255,255,255,.22) 2.2px,transparent 2.6px);background-size:14px 14px;
     -webkit-mask-image:linear-gradient(100deg,#000 0,transparent 85%);mask-image:linear-gradient(100deg,#000 0,transparent 85%);pointer-events:none}
 
-  .hero{position:relative;height:790px}
+  .hero{position:relative;height:1130px}
   .logo{position:absolute;right:56px;top:50px;height:84px}
   .chips{position:absolute;left:56px;top:56px;display:flex;gap:12px}
   .chips span{font-weight:800;font-size:25px;border-radius:999px;padding:8px 24px;background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.4)}
   .chips span.on{background:var(--gold);border-color:var(--gold);color:var(--navy)}
-  .mascot{position:absolute;left:-26px;top:170px;height:570px;filter:drop-shadow(0 22px 28px rgba(0,10,60,.45))}
-  .title{position:absolute;left:440px;top:215px;width:600px}
-  .title .pre{font-weight:600;font-size:38px;line-height:1.1}
-  .title h1{font-weight:800;font-size:90px;line-height:.95;letter-spacing:-.02em;text-transform:uppercase;margin-top:8px;margin-left:-4px}
-  .title .sub{margin-top:26px;font-weight:600;font-size:36px;line-height:1.1}
+  .mascot{position:absolute;left:-30px;top:640px;height:500px;filter:drop-shadow(0 22px 28px rgba(0,10,60,.45))}
+  .title{position:absolute;left:56px;top:190px;width:968px}
+  .title .pre{font-weight:600;font-size:48px;line-height:1.1}
+  .title h1{font-weight:800;font-size:134px;line-height:.95;letter-spacing:-.025em;text-transform:uppercase;margin-top:6px;margin-left:-6px}
+  .title .sub{margin-top:30px;font-weight:600;font-size:46px;line-height:1.1}
   .title .sub em{display:block;font-weight:700;font-style:italic;color:var(--gold);margin-top:4px}
-  .title .qb{display:inline-block;margin-top:34px;background:#fff;border-radius:20px;padding:10px 24px;box-shadow:0 8px 0 rgba(0,10,60,.25)}
-  .title .qb img{height:54px;display:block}
+  .side{position:absolute;left:500px;top:690px;width:524px}
+  .side p{font-weight:800;font-size:46px;line-height:1.12}
+  .title .qb,.side .qb{display:inline-block;margin-top:34px;background:#fff;border-radius:20px;padding:10px 24px;box-shadow:0 8px 0 rgba(0,10,60,.25)}
+  .side .qb img{height:66px;display:block}
 
-  .body{position:relative;padding:0 56px 44px}
+  .body{position:relative;padding:0 56px 60px}
   .row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .card{background:rgba(255,255,255,.10);border:2px solid rgba(255,255,255,.35);border-radius:30px;padding:26px 28px 28px;backdrop-filter:blur(2px)}
-  .card small{display:block;font-weight:800;font-size:20px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-  .card h3{font-weight:800;font-size:31px;line-height:1.12;margin-top:8px;min-height:104px}
-  .date{margin-top:16px;border:2.5px dashed rgba(255,255,255,.65);border-radius:16px;padding:12px 18px;font-weight:600;font-size:22px;color:rgba(255,255,255,.85)}
-  .gap{margin:16px auto 0;width:max-content;font-weight:700;font-size:22px;background:rgba(255,255,255,.14);border-radius:999px;padding:6px 24px}
+  .card{background:rgba(255,255,255,.10);border:2px solid rgba(255,255,255,.35);border-radius:30px;padding:34px 32px 36px;backdrop-filter:blur(2px)}
+  .card small{display:block;font-weight:800;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .card h3{font-weight:800;font-size:38px;line-height:1.12;margin-top:10px;min-height:130px}
+  .date{margin-top:16px;border:2.5px dashed rgba(255,255,255,.65);border-radius:16px;padding:18px 20px;font-weight:600;font-size:25px;color:rgba(255,255,255,.85)}
+  .gap{margin:22px auto 0;width:max-content;font-weight:700;font-size:26px;background:rgba(255,255,255,.14);border-radius:999px;padding:6px 24px}
   .gap b{color:var(--gold)}
-  .hours{margin-top:26px;background:var(--gold);color:var(--navy);border-radius:26px;padding:22px 30px;display:flex;align-items:center;gap:22px;box-shadow:0 8px 0 rgba(0,10,60,.28)}
-  .hours svg{flex:none;width:62px;height:62px}
-  .hours b{display:block;font-weight:800;font-size:38px;line-height:1.05;letter-spacing:-.01em}
-  .hours span{font-weight:600;font-size:23px}
-  .cert{margin-top:20px;display:flex;align-items:center;gap:20px;padding:0 6px}
-  .cert b{font-weight:800;font-size:27px;line-height:1.15;display:block}
-  .cert span{font-size:23px;opacity:.9}
-  .mon{margin-top:26px;display:flex;align-items:center;gap:26px;background:#fff;color:var(--navy);border-radius:30px;padding:20px 28px;box-shadow:0 8px 0 rgba(0,10,60,.28)}
-  .mon img{flex:none;width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:60% 25%;border:5px solid var(--cyan)}
-  .mon small{display:block;font-weight:800;font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
-  .mon b{display:block;font-weight:800;font-size:42px;line-height:1.05}
-  .mon span{font-size:23px;font-weight:600;color:#42507a}
-  .what{margin-top:24px;font-size:24px;line-height:1.4;color:#e6efff}
+  .hours{margin-top:54px;background:var(--gold);color:var(--navy);border-radius:26px;padding:32px 36px;display:flex;align-items:center;gap:26px;box-shadow:0 8px 0 rgba(0,10,60,.28)}
+  .hours svg{flex:none;width:78px;height:78px}
+  .hours b{display:block;font-weight:800;font-size:46px;line-height:1.05;letter-spacing:-.01em}
+  .hours span{font-weight:600;font-size:28px}
+  .cert{margin-top:34px;display:flex;align-items:center;gap:20px;padding:0 6px}
+  .cert b{font-weight:800;font-size:34px;line-height:1.15;display:block}
+  .cert span{font-size:28px;opacity:.9}
+  .mon{margin-top:54px;display:flex;align-items:center;gap:32px;background:#fff;color:var(--navy);border-radius:34px;padding:30px 36px;box-shadow:0 8px 0 rgba(0,10,60,.28)}
+  .mon img{flex:none;width:190px;height:190px;border-radius:50%;object-fit:cover;object-position:60% 25%;border:5px solid var(--cyan)}
+  .mon small{display:block;font-weight:800;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+  .mon b{display:block;font-weight:800;font-size:54px;line-height:1.05}
+  .mon span{font-size:28px;font-weight:600;color:#42507a}
+  .what{margin-top:48px;font-size:32px;line-height:1.45;color:#e6efff}
   .what b{color:#fff;font-weight:800}
-  .cta{margin-top:26px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-  .btn{background:var(--cyan);color:var(--navy);font-weight:800;font-size:26px;white-space:nowrap;border-radius:999px;padding:16px 34px;box-shadow:0 6px 0 rgba(0,10,60,.28)}
-  .contact{text-align:right;font-size:24px;line-height:1.35}
+  .cta{margin-top:54px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .btn{background:var(--cyan);color:var(--navy);font-weight:800;font-size:32px;white-space:nowrap;border-radius:999px;padding:22px 42px;box-shadow:0 6px 0 rgba(0,10,60,.28)}
+  .contact{text-align:right;font-size:28px;line-height:1.35}
   .contact strong{color:var(--gold);font-weight:700}
-  .footer{display:block;width:1080px}
+  .footer{display:block;width:1080px;position:relative}
 </style>
 </head>
 <body>
+<img class="bg" src="assets/bg-grid.svg" alt="" aria-hidden="true">
 
 <header class="hero">
   <div class="chips"><span class="on">Gratuito</span><span>100 % virtual</span></div>
@@ -67,8 +72,8 @@
     <p class="pre">Aprende contabilidad con</p>
     <h1>QuickBooks</h1>
     <p class="sub">Formación práctica<em>en 2 sesiones virtuales</em></p>
-    <div class="qb"><img src="assets/logo-quickbooks.png" alt="Intuit QuickBooks"></div>
   </div>
+  <div class="side"><p>Abre la contabilidad de una empresa en la nube</p><div class="qb"><img src="assets/logo-quickbooks.png" alt="Intuit QuickBooks"></div></div>
 </header>
 
 <main class="body">
