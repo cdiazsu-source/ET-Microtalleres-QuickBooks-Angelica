@@ -39,6 +39,11 @@
   .gal img{display:block;width:100%;height:auto}
   .gal figcaption{display:flex;justify-content:space-between;gap:8px;padding:8px 12px;font-family:var(--mono);font-size:13px}
   .gal a{color:var(--blue);font-weight:700}
+  .vids{max-width:1080px;margin:0 auto;padding:0 16px;display:grid;gap:24px}
+  .vids figure{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,102,.15)}
+  .vids iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#073a8c}
+  .vids figcaption{display:flex;justify-content:space-between;gap:8px;padding:8px 12px;font-family:var(--mono);font-size:13px}
+  .vids a{color:var(--blue);font-weight:700}
 </style>
 </head>
 <body>
@@ -66,7 +71,7 @@
   </section>
   <section class="panel" id="p4" role="tabpanel" aria-labelledby="tab-4" hidden>
     <div class="sub" role="group" aria-label="Formatos de la propuesta 4">
-      <button data-s="info" aria-pressed="true">Infografía larga</button><button data-s="ig" aria-pressed="false">Instagram (6)</button><button data-s="tv" aria-pressed="false">TV (5)</button><button data-s="ban" aria-pressed="false">Banner formulario</button><button data-s="tir" aria-pressed="false">Tirilla eventos pasados</button><button data-s="wa" aria-pressed="false">Foto WhatsApp</button>
+      <button data-s="info" aria-pressed="true">Infografía larga</button><button data-s="ig" aria-pressed="false">Instagram (6)</button><button data-s="tv" aria-pressed="false">TV (5)</button><button data-s="ban" aria-pressed="false">Banner formulario</button><button data-s="tir" aria-pressed="false">Tirilla eventos pasados</button><button data-s="wa" aria-pressed="false">Foto WhatsApp</button><button data-s="vid" aria-pressed="false">Video TV (2)</button>
     </div>
     <div class="sp" id="sp-info">
     <div class="actions"><a href="propuesta-4/infografia.png" download>Descargar PNG ↓</a></div>
@@ -77,6 +82,7 @@
     <div class="sp" id="sp-ban" hidden><div class="gal one"><figure><img src="propuesta-4/extras/banner-formulario.png" alt="Banner formulario · Propuesta 1 · 1600×400" loading="lazy"><figcaption><span>Banner formulario · Propuesta 1 · 1600×400</span><a href="propuesta-4/extras/banner-formulario.png" download>PNG ↓</a></figcaption></figure><figure><img src="propuesta-4/extras/banner-formulario-v2.png" alt="Banner formulario · Propuesta 2 · 1600×400" loading="lazy"><figcaption><span>Banner formulario · Propuesta 2 · 1600×400</span><a href="propuesta-4/extras/banner-formulario-v2.png" download>PNG ↓</a></figcaption></figure><figure><img src="propuesta-4/extras/banner-formulario-v3.png" alt="Banner formulario · Propuesta 3 (minimalista) · 1600×400" loading="lazy"><figcaption><span>Banner formulario · Propuesta 3 (minimalista) · 1600×400</span><a href="propuesta-4/extras/banner-formulario-v3.png" download>PNG ↓</a></figcaption></figure></div></div>
     <div class="sp" id="sp-tir" hidden><div class="gal one"><figure><img src="propuesta-4/extras/tirilla-eventos-pasados.png" alt="Tirilla eventos pasados 1600×150" loading="lazy"><figcaption><span>Tirilla eventos pasados 1600×150</span><a href="propuesta-4/extras/tirilla-eventos-pasados.png" download>PNG ↓</a></figcaption></figure></div></div>
     <div class="sp" id="sp-wa" hidden><div class="gal"><figure><img src="propuesta-4/extras/whatsapp-foto.png" alt="Foto de WhatsApp 800×800 (se recorta en círculo)" loading="lazy"><figcaption><span>Foto de WhatsApp 800×800 (se recorta en círculo)</span><a href="propuesta-4/extras/whatsapp-foto.png" download>PNG ↓</a></figcaption></figure></div></div>
+    <div class="sp" id="sp-vid" hidden><div class="vids"><figure><iframe src="propuesta-4/extras/tv-video-propuesta-2.html" title="Video TV · Propuesta 2 · con QR y captura del perfil (1920×1080)" loading="lazy" allowfullscreen></iframe><figcaption><span>Video TV · Propuesta 2 · con QR y captura del perfil (1920×1080)</span><a href="propuesta-4/extras/tv-video-propuesta-2.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></figcaption></figure><figure><iframe src="propuesta-4/extras/tv-video-propuesta.html" title="Video TV · Propuesta 1 · con foto de la monitora (1920×1080)" loading="lazy" allowfullscreen></iframe><figcaption><span>Video TV · Propuesta 1 · con foto de la monitora (1920×1080)</span><a href="propuesta-4/extras/tv-video-propuesta.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></figcaption></figure></div></div>
   </section>
 </main>
 <script>
@@ -100,7 +106,7 @@
   var m=location.hash.match(/^#propuesta-([1234])$/);show(m?+m[1]:1,false);
   document.querySelectorAll('.sub button').forEach(function(b){b.addEventListener('click',function(){
     document.querySelectorAll('.sub button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
-    ['info','ig','tv','ban','tir','wa'].forEach(function(k){document.getElementById('sp-'+k).hidden=k!==b.dataset.s});
+    ['info','ig','tv','ban','tir','wa','vid'].forEach(function(k){document.getElementById('sp-'+k).hidden=k!==b.dataset.s});
   })});
 </script>
 </body>
