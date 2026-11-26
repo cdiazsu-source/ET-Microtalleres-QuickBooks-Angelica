@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Microtaller QuickBooks · Propuestas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#000066;--blue:#1D1DA5;--lila:#6666FF;--cyan:#3ED3FF;--canvas:#F5F5FF;--tint:#E6E6FF;--soft:#4D4D94;
+    --font:'Ancizar Sans',Arial,Helvetica,sans-serif;--mono:Consolas,'SFMono-Regular',Menlo,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--canvas);font-family:var(--font);color:var(--navy)}
+  header{position:sticky;top:0;z-index:10;background:var(--navy);border-bottom:4px solid var(--cyan);
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:12px 16px}
+  .brand{color:#fff;font-weight:800;font-size:18px;line-height:1.1;margin-right:auto}
+  .brand small{display:block;font-family:var(--mono);font-weight:400;font-size:12px;color:var(--cyan);margin-top:3px}
+  nav{display:flex;gap:8px;background:rgba(255,255,255,.12);padding:5px;border-radius:999px}
+  nav button{font:inherit;font-weight:700;font-size:15px;border:0;cursor:pointer;border-radius:999px;padding:9px 20px;background:transparent;color:#fff}
+  nav button:hover{background:rgba(255,255,255,.14)}
+  nav button[aria-selected="true"]{background:var(--cyan);color:var(--navy)}
+  nav button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+  main{padding:24px 0 48px}
+  .panel[hidden]{display:none}
+  .frame{margin:0 auto;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,102,.18)}
+  .frame iframe{border:0;width:1080px;display:block;transform-origin:0 0}
+  .actions{max-width:1080px;margin:0 auto 16px;padding:0 16px;display:flex;justify-content:flex-end;gap:18px}
+  .actions a{font-family:var(--mono);font-size:14px;color:var(--blue);font-weight:700}
+  .empty{max-width:720px;margin:48px auto;padding:56px 24px;text-align:center;border:3px dashed var(--lila);border-radius:28px;background:#fff}
+  .empty h2{font-size:34px;font-weight:800}
+  .empty p{margin-top:10px;font-family:var(--mono);color:var(--soft);font-size:15px}
+  .sub{max-width:1080px;margin:0 auto 16px;padding:0 16px;display:flex;gap:8px;flex-wrap:wrap}
+  .sub button{font:inherit;font-weight:700;font-size:14px;border:2px solid var(--lila);cursor:pointer;border-radius:999px;padding:7px 16px;background:#fff;color:var(--navy)}
+  .sub button[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .sp[hidden]{display:none}
+  .gal{max-width:1080px;margin:0 auto;padding:0 16px;display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+  .gal.tv{grid-template-columns:repeat(auto-fill,minmax(420px,1fr))}.gal.one{grid-template-columns:1fr}
+  .gal figure{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,102,.15)}
+  .gal img{display:block;width:100%;height:auto}
+  .gal figcaption{display:flex;justify-content:space-between;gap:8px;padding:8px 12px;font-family:var(--mono);font-size:13px}
+  .gal a{color:var(--blue);font-weight:700}
+  .vids{max-width:1080px;margin:0 auto;padding:0 16px;display:grid;gap:24px}
+  .vids figure{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,102,.15)}
+  .vids iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#073a8c}
+  .vids figcaption{display:flex;justify-content:space-between;gap:8px;padding:8px 12px;font-family:var(--mono);font-size:13px}
+  .vids a{color:var(--blue);font-weight:700}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Microtaller UIFCE · QuickBooks<small>// propuestas de infografía · <a href="index.html" style="color:#fff">← todos los microtalleres</a></small></div>
+  <nav role="tablist" aria-label="Propuestas">
+    <button role="tab" id="tab-1" hidden aria-controls="p1" aria-selected="true" data-p="1">Propuesta 1</button>
+    <button role="tab" id="tab-2" hidden aria-controls="p2" aria-selected="false" data-p="2">Propuesta 2</button>
+    <button role="tab" id="tab-3" hidden aria-controls="p3" aria-selected="false" data-p="3">Propuesta 3</button>
+    <button role="tab" id="tab-4" aria-controls="p4" aria-selected="false" data-p="4">Propuesta 4</button>
+  </nav>
+</header>
+<main>
+  <section class="panel" id="p1" role="tabpanel" aria-labelledby="tab-1">
+    <div class="actions"><a href="propuesta-1/infografia.png" download>Descargar PNG ↓</a> <a href="propuesta-1/infografia.pdf" download>Descargar PDF ↓</a></div>
+    <div class="frame" id="frame1"><iframe id="if1" src="propuesta-1/index.html" title="Propuesta 1" scrolling="no" width="1080" height="3803"></iframe></div>
+  </section>
+  <section class="panel" id="p2" role="tabpanel" aria-labelledby="tab-2" hidden>
+    <div class="actions"><a href="propuesta-2/infografia.png" download>Descargar PNG ↓</a> <a href="propuesta-2/infografia.pdf" download>Descargar PDF ↓</a></div>
+    <div class="frame" id="frame2"><iframe id="if2" src="propuesta-2/index.html" title="Propuesta 2" scrolling="no" width="1080" height="4536"></iframe></div>
+  </section>
+  <section class="panel" id="p3" role="tabpanel" aria-labelledby="tab-3" hidden>
+    <div class="actions"><a href="propuesta-3/infografia.png" download>Descargar PNG ↓</a> <a href="propuesta-3/infografia.pdf" download>Descargar PDF ↓</a></div>
+    <div class="frame" id="frame3"><iframe id="if3" src="propuesta-3/index.html" title="Propuesta 3" scrolling="no" width="1080" height="3631"></iframe></div>
+  </section>
+  <section class="panel" id="p4" role="tabpanel" aria-labelledby="tab-4" hidden>
+    <div class="sub" role="group" aria-label="Formatos de la propuesta 4">
+      <button data-s="info" aria-pressed="true">Infografía larga</button><button data-s="ig" aria-pressed="false">Instagram (6)</button><button data-s="tv" aria-pressed="false">TV (5)</button><button data-s="ban" aria-pressed="false">Banner formulario</button><button data-s="tir" aria-pressed="false">Tirilla eventos pasados</button><button data-s="wa" aria-pressed="false">Foto WhatsApp</button><button data-s="vid" aria-pressed="false">Video TV (2)</button>
+    </div>
+    <div class="sp" id="sp-info">
+    <div class="actions"><a href="propuesta-4/infografia.png" download>Descargar PNG ↓</a> <a href="propuesta-4/infografia.pdf" download>Descargar PDF ↓</a></div>
+    <div class="frame" id="frame4"><iframe id="if4" src="propuesta-4/index.html" title="Propuesta 4" scrolling="no" width="1080" height="3193"></iframe></div>
+    </div>
+    <div class="sp" id="sp-ig" hidden><div class="gal"><figure><img src="propuesta-4/extras/ig-01.png" alt="Instagram 1/6" loading="lazy"><figcaption><span>Instagram 1/6</span><span><a href="propuesta-4/extras/ig-01.png" download>PNG ↓</a> · <a href="propuesta-4/extras/ig-01.pdf" download>PDF ↓</a></span></figcaption></figure><figure><img src="propuesta-4/extras/ig-02.png" alt="Instagram 2/6" loading="lazy"><figcaption><span>Instagram 2/6</span><span><a href="propuesta-4/extras/ig-02.png" download>PNG ↓</a> · <a href="propuesta-4/extras/ig-02.pdf" download>PDF ↓</a></span></figcaption></figure><figure><img src="propuesta-4/extras/ig-03.png" alt="Instagram 3/6" loading="lazy"><figcaption><span>Instagram 3/6</span><span><a href="propuesta-4/extras/ig-03.png" download>PNG ↓</a> · <a href="propuesta-4/extras/ig-03.pdf" download>PDF ↓</a></span></figcaption></figure><figure><img src="propuesta-4/extras/ig-04.png" alt="Instagram 4/6" loading="lazy"><figcaption><span>Instagram 4/6</span><span><a href="propuesta-4/extras/ig-04.png" download>PNG ↓</a> · <a href="propuesta-4/extras/ig-04.pdf" download>PDF ↓</a></span></figcaption></figure><figure><img src="propuesta-4/extras/ig-05.png" alt="Instagram 5/6" loading="lazy"><figcaption><span>Instagram 5/6</span><span><a href="propuesta-4/extras/ig-05.png" download>PNG ↓</a> · <a href="propuesta-4/extras/ig-05.pdf" download>PDF ↓</a></span></figcaption></figure><figure><img src="propuesta-4/extras/ig-06.png" alt="Instagram 6/6" loading="lazy"><figcaption><span>Instagram 6/6</span><span><a href="propuesta-4/extras/ig-06.png" download>PNG ↓</a> · <a href="propuesta-4/extras/ig-06.pdf" download>PDF ↓</a></span></figcaption></figure></div></div>
+    <div class="sp" id="sp-tv" hidden><div class="gal tv"><figure><img src="propuesta-4/extras/tv-01.png" alt="TV 1/5" loading="lazy"><figcaption><span>TV 1/5</span><span><a href="propuesta-4/extras/tv-01.png" download>PNG ↓</a> · <a href="propuesta-4/extras/tv-01.pdf" download>PDF ↓</a></span></figcaption></figure><figure><img src="propuesta-4/extras/tv-02.png" alt="TV 2/5" loading="lazy"><figcaption><span>TV 2/5</span><span><a href="propuesta-4/extras/tv-02.png" download>PNG ↓</a> · <a href="propuesta-4/extras/tv-02.pdf" download>PDF ↓</a></span></figcaption></figure><figure><img src="propuesta-4/extras/tv-03.png" alt="TV 3/5" loading="lazy"><figcaption><span>TV 3/5</span><span><a href="propuesta-4/extras/tv-03.png" download>PNG ↓</a> · <a href="propuesta-4/extras/tv-03.pdf" download>PDF ↓</a></span></figcaption></figure><figure><img src="propuesta-4/extras/tv-04.png" alt="TV 4/5" loading="lazy"><figcaption><span>TV 4/5</span><span><a href="propuesta-4/extras/tv-04.png" download>PNG ↓</a> · <a href="propuesta-4/extras/tv-04.pdf" download>PDF ↓</a></span></figcaption></figure><figure><img src="propuesta-4/extras/tv-05.png" alt="TV 5/5" loading="lazy"><figcaption><span>TV 5/5</span><span><a href="propuesta-4/extras/tv-05.png" download>PNG ↓</a> · <a href="propuesta-4/extras/tv-05.pdf" download>PDF ↓</a></span></figcaption></figure><figure><a href="propuesta-4/extras/tv-presentacion.html" style="display:block;padding:14px;font-weight:700;color:var(--blue)">▶ Abrir presentación automática para TV</a></figure></div></div>
+    <div class="sp" id="sp-ban" hidden><div class="gal one"><figure><img src="propuesta-4/extras/banner-formulario.png" alt="Banner formulario · Propuesta 1 · 1600×400" loading="lazy"><figcaption><span>Banner formulario · Propuesta 1 · 1600×400</span><span><a href="propuesta-4/extras/banner-formulario.png" download>PNG ↓</a> · <a href="propuesta-4/extras/banner-formulario.pdf" download>PDF ↓</a></span></figcaption></figure><figure><img src="propuesta-4/extras/banner-formulario-v2.png" alt="Banner formulario · Propuesta 2 · 1600×400" loading="lazy"><figcaption><span>Banner formulario · Propuesta 2 · 1600×400</span><span><a href="propuesta-4/extras/banner-formulario-v2.png" download>PNG ↓</a> · <a href="propuesta-4/extras/banner-formulario-v2.pdf" download>PDF ↓</a></span></figcaption></figure><figure><img src="propuesta-4/extras/banner-formulario-v3.png" alt="Banner formulario · Propuesta 3 (minimalista) · 1600×400" loading="lazy"><figcaption><span>Banner formulario · Propuesta 3 (minimalista) · 1600×400</span><span><a href="propuesta-4/extras/banner-formulario-v3.png" download>PNG ↓</a> · <a href="propuesta-4/extras/banner-formulario-v3.pdf" download>PDF ↓</a></span></figcaption></figure></div></div>
+    <div class="sp" id="sp-tir" hidden><div class="gal one"><figure><img src="propuesta-4/extras/tirilla-eventos-pasados.png" alt="Tirilla eventos pasados 1600×150" loading="lazy"><figcaption><span>Tirilla eventos pasados 1600×150</span><span><a href="propuesta-4/extras/tirilla-eventos-pasados.png" download>PNG ↓</a> · <a href="propuesta-4/extras/tirilla-eventos-pasados.pdf" download>PDF ↓</a></span></figcaption></figure></div></div>
+    <div class="sp" id="sp-wa" hidden><div class="gal"><figure><img src="propuesta-4/extras/whatsapp-foto.png" alt="Foto de WhatsApp 800×800 (se recorta en círculo)" loading="lazy"><figcaption><span>Foto de WhatsApp 800×800 (se recorta en círculo)</span><span><a href="propuesta-4/extras/whatsapp-foto.png" download>PNG ↓</a> · <a href="propuesta-4/extras/whatsapp-foto.pdf" download>PDF ↓</a></span></figcaption></figure></div></div>
+    <div class="sp" id="sp-vid" hidden><div class="vids"><figure><iframe src="propuesta-4/extras/tv-video-propuesta-2.html" title="Video TV · Propuesta 2 · con QR y captura del perfil (1920×1080)" loading="lazy" allowfullscreen></iframe><figcaption><span>Video TV · Propuesta 2 · con QR y captura del perfil (1920×1080)</span><a href="propuesta-4/extras/tv-video-propuesta-2.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></figcaption></figure><figure><iframe src="propuesta-4/extras/tv-video-propuesta.html" title="Video TV · Propuesta 1 · con foto de la monitora (1920×1080)" loading="lazy" allowfullscreen></iframe><figcaption><span>Video TV · Propuesta 1 · con foto de la monitora (1920×1080)</span><a href="propuesta-4/extras/tv-video-propuesta.html" target="_blank" rel="noopener">Abrir en pantalla completa ↗</a></figcaption></figure></div></div>
+  </section>
+</main>
+<script>
+  var tabs=document.querySelectorAll('nav button'), panels={1:document.getElementById('p1'),2:document.getElementById('p2'),3:document.getElementById('p3'),4:document.getElementById('p4')};
+  var SIZES={1:[1080,3803],2:[1080,4536],3:[1080,3631],4:[1080,3193]};
+  function fit(){
+    var cw=document.documentElement.clientWidth;
+    [1,2,3,4].forEach(function(n){
+      var w=SIZES[n][0],h=SIZES[n][1],k=Math.min(cw,w)/w,f=document.getElementById('frame'+n),i=document.getElementById('if'+n);
+      i.style.width=w+'px'; i.style.height=h+'px'; i.style.transform='scale('+k+')'; f.style.width=(w*k)+'px'; f.style.height=(h*k)+'px';
+    });
+  }
+  function show(n,push){
+    tabs.forEach(function(b){b.setAttribute('aria-selected',String(b.dataset.p==n))});
+    [1,2,3,4].forEach(function(i){panels[i].hidden=i!=n});
+    if(push) history.replaceState(null,'','#propuesta-'+n);
+    window.scrollTo(0,0);
+  }
+  tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.p,true)})});
+  window.addEventListener('resize',fit); fit();
+  var m=location.hash.match(/^#propuesta-(4)$/);show(4,false); /* propuestas 1-3 ocultas (no se borran): quitar 'hidden' de los botones tab-1..3 para mostrarlas */
+  document.querySelectorAll('.sub button').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.sub button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+    ['info','ig','tv','ban','tir','wa','vid'].forEach(function(k){document.getElementById('sp-'+k).hidden=k!==b.dataset.s});
+  })});
+</script>
+</body>
+</html>
