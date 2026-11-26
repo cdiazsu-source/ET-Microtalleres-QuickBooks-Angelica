@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Volante genérico · ¿Necesitas horas de corresponsabilidad?</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+@page{size:letter;margin:0}
+:root{--navy:#04255f;--blue:#0a4aa8;--cyan:#1EB7FF;--gold:#F7C32E;--font:"Open Sans",system-ui,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{width:816px;height:1056px;background:#fff}
+body{position:relative;overflow:hidden;font-family:var(--font);color:var(--navy);line-height:1.2}
+.top{position:absolute;left:0;top:0;width:816px;height:128px;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 44px}
+.top img{height:76px;display:block}
+.top .tag{display:flex;gap:10px;font-weight:800;font-size:17px}
+.chip{border-radius:999px;padding:6px 16px;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.5);color:#fff}
+.chip.on{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.hook{position:absolute;left:44px;top:158px;width:728px}
+.hook .q{font-weight:800;font-size:46px;line-height:1}
+.hook .big{margin-top:10px;background:var(--gold);border-radius:26px;padding:20px 30px 22px;box-shadow:0 7px 0 var(--navy)}
+.hook .big b{display:block;font-weight:800;font-size:122px;line-height:.9;letter-spacing:-.03em}
+.hook .big span{display:block;font-weight:800;font-size:42px;line-height:1.05;margin-top:6px}
+.sub{position:absolute;left:44px;top:446px;width:728px;font-size:25px;font-weight:600;line-height:1.3}
+.sub b{font-weight:800}
+.qb{position:absolute;left:44px;top:526px;display:flex;align-items:center;gap:18px}
+.qb img{height:50px;display:block;border:2px solid var(--navy);border-radius:12px;padding:6px 14px}
+.qb span{font-size:19px;font-weight:700;color:var(--blue)}
+.cols{position:absolute;left:44px;top:608px;width:728px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.c{border:3px solid var(--navy);border-radius:18px;padding:12px 14px;min-height:96px}
+.c small{display:block;font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.c b{display:block;font-weight:800;font-size:19px;line-height:1.15;margin-top:5px}
+.req{position:absolute;left:44px;top:752px;width:450px}
+.req h3{font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.req ul{list-style:none;margin-top:6px;font-size:17px;font-weight:700;line-height:1.25}
+.req li{margin-top:6px;padding-left:26px;position:relative}
+.req li::before{content:"✓";position:absolute;left:0;top:0;width:19px;height:19px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.qr{position:absolute;right:44px;top:742px;width:270px;border:4px solid var(--navy);border-radius:22px;padding:10px 14px 12px;text-align:center}
+.qr img{width:168px;height:168px;display:block;margin:0 auto}
+.qr b{display:block;font-weight:800;font-size:16px;line-height:1.1}
+.qr small{display:block;font-weight:700;font-size:11px;color:var(--blue);margin-top:6px;word-break:break-all}
+.foot{position:absolute;left:0;bottom:0;width:816px;height:52px;background:var(--navy);color:#fff;font-size:13px;font-weight:600;padding:0 44px;display:flex;align-items:center;justify-content:space-between}
+.foot b{color:var(--gold);font-weight:700}
+
+.hook .q{text-align:center}
+.hook .big{text-align:center;padding:20px 30px 24px}
+.hook .big .nq{display:block;font-style:normal;font-weight:800;font-size:46px;line-height:1;margin-bottom:6px}
+.hook .big b{font-size:112px}
+.mascot{position:absolute;right:46px;top:146px;height:172px;display:block;z-index:3;filter:drop-shadow(0 6px 8px rgba(4,37,95,.35))}
+.sub{top:446px}
+.cols{top:546px}
+.cta{position:absolute;left:44px;top:690px;width:420px}
+.cta .e{font-weight:800;font-size:76px;line-height:.95;letter-spacing:-.02em}
+.cta .arrow{display:inline-block;margin-top:14px;background:var(--navy);color:#fff;font-weight:800;font-size:22px;border-radius:999px;padding:9px 22px}
+.cta p{margin-top:16px;font-size:18px;font-weight:600;line-height:1.3;color:var(--blue)}
+.qr{top:684px;right:44px;width:300px}
+.qr img{width:216px;height:216px}
+.qr b{font-size:18px}
+.qr small{font-size:12px}
+</style>
+</head>
+<body>
+<div class="top">
+  <img src="../assets/logo-uifce-static-blanco.png" alt="UIFCE">
+  <div class="tag"><span class="chip on">Cursos 100 % virtuales</span></div>
+</div>
+
+<div class="hook">
+  <div class="big"><i class="nq">¿Necesitas</i><b>HORAS</b><span>de corresponsabilidad?</span></div>
+</div>
+
+<img class="mascot" src="../assets/uifcito-cierre.png" alt="Uifcito, mascota de la Unidad de Informática">
+
+<p class="sub">Súmalas en los <b>microtalleres virtuales</b> de la Unidad de Informática, <b>desde donde estés</b>.</p>
+
+<div class="cols">
+  <div class="c"><small>Modalidad</small><b>100 % virtual<br>conéctate desde casa</b></div>
+  <div class="c"><small>Oferta</small><b>Varios microtalleres<br>y temas</b></div>
+  <div class="c"><small>Organiza</small><b style="font-size:17px">Unidad de Informática de la Facultad de Ciencias Económicas</b></div>
+</div>
+
+<div class="cta">
+  <div class="e">Entérate<br>aquí</div>
+  <span class="arrow">Escanea el QR →</span>
+  <p>Consulta los cursos disponibles, las fechas y cómo inscribirte.</p>
+</div>
+
+<div class="qr">
+  <b>Todos los cursos aquí</b>
+  <img src="../assets/qr-linktree.svg" alt="QR de Linktree UIFCE" style="margin-top:8px">
+  <small>linktr.ee/UIFCE</small>
+</div>
+
+<div class="foot">
+  <span><b>uniic_bog@unal.edu.co</b> · Tel. 316 5000, ext. 12301</span>
+  <span>LinkedIn: <b>linkedin.com/in/uifce</b></span>
+</div>
+</body>
+</html>

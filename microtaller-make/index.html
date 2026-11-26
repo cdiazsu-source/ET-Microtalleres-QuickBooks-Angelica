@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>Microtaller Make · Propuesta 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#04255f;--blue:#0a4aa8;--cyan:#1EB7FF;--gold:#F7C32E;--font:"Open Sans",system-ui,Arial,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1080px;position:relative;overflow:hidden;background:#073a8c;font-family:var(--font);color:#fff;font-size:26px;line-height:1.35}
+  .bg{position:absolute;left:0;top:0;width:100%;height:100%;z-index:0;display:block}
+  .hero,.body,.footer{z-index:1}
+  /* puntos de media tinta, como en la referencia */
+  body::before{content:"";position:absolute;left:0;top:0;width:560px;height:900px;background-image:radial-gradient(rgba(255,255,255,.22) 2.2px,transparent 2.6px);background-size:14px 14px;
+    -webkit-mask-image:linear-gradient(100deg,#000 0,transparent 85%);mask-image:linear-gradient(100deg,#000 0,transparent 85%);pointer-events:none}
+
+  .hero{position:relative;height:960px}
+  .logo{position:absolute;right:56px;top:50px;height:84px}
+  .chips{position:absolute;left:56px;top:44px;width:740px;display:flex;flex-wrap:wrap;gap:12px}
+  .chips span{font-weight:800;font-size:25px;border-radius:999px;padding:8px 24px;background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.4)}
+  .chips span.on{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+  .mascot{position:absolute;left:-30px;top:540px;height:470px;filter:drop-shadow(0 22px 28px rgba(0,10,60,.45))}
+  .title{position:absolute;left:56px;top:190px;width:968px}
+  .title .pre{font-weight:600;font-size:48px;line-height:1.1}
+  .title h1{font-weight:800;font-size:134px;line-height:.95;letter-spacing:-.025em;text-transform:uppercase;margin-top:6px;margin-left:-6px}
+  .title .sub{margin-top:30px;font-weight:600;font-size:46px;line-height:1.1}
+  .title .sub em{display:block;font-weight:700;font-style:italic;color:var(--gold);margin-top:4px}
+  .side{position:absolute;left:500px;top:690px;width:524px}
+  .side p{font-weight:800;font-size:46px;line-height:1.12}
+  .title .qb,.side .qb{display:inline-block;margin-top:34px;background:#fff;border-radius:20px;padding:10px 24px;box-shadow:0 8px 0 rgba(0,10,60,.25)}
+  .side .qb img{height:66px;display:block}
+
+  .body{position:relative;padding:0 56px 60px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .card{background:rgba(255,255,255,.10);border:2px solid rgba(255,255,255,.35);border-radius:30px;padding:34px 32px 36px;backdrop-filter:blur(2px)}
+  .card small{display:block;font-weight:800;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .card h3{font-weight:800;font-size:38px;line-height:1.12;margin-top:10px;min-height:130px}
+  .date{margin-top:16px;border:2.5px dashed rgba(255,255,255,.65);border-radius:16px;padding:18px 20px;font-weight:600;font-size:25px;color:rgba(255,255,255,.85)}
+  .gap{margin:22px auto 0;width:max-content;font-weight:700;font-size:26px;background:rgba(255,255,255,.14);border-radius:999px;padding:6px 24px}
+  .gap b{color:var(--gold)}
+  .hours{margin-top:30px;background:var(--gold);color:var(--navy);border-radius:26px;padding:32px 36px;display:flex;align-items:center;gap:26px;box-shadow:0 8px 0 rgba(0,10,60,.28)}
+  .hours svg{flex:none;width:78px;height:78px}
+  .hours b{display:block;font-weight:800;font-size:46px;line-height:1.05;letter-spacing:-.01em}
+  .hours span{font-weight:600;font-size:28px}
+  .cert{margin-top:34px;display:flex;align-items:center;gap:20px;padding:0 6px}
+  .cert b{font-weight:800;font-size:34px;line-height:1.15;display:block}
+  .cert span{font-size:28px;opacity:.9}
+  .mon{margin-top:54px;display:flex;align-items:center;gap:32px;background:#fff;color:var(--navy);border-radius:34px;padding:30px 36px;box-shadow:0 8px 0 rgba(0,10,60,.28)}
+  .mon img{flex:none;width:190px;height:190px;border-radius:50%;object-fit:cover;object-position:60% 25%;border:5px solid var(--cyan)}
+  .mon small{display:block;font-weight:800;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+  .mon b{display:block;font-weight:800;font-size:54px;line-height:1.05}
+  .mon span{font-size:28px;font-weight:600;color:#42507a}
+  .what{margin-top:48px;font-size:32px;line-height:1.45;color:#e6efff}
+  .what b{color:#fff;font-weight:800}
+  .cta{margin-top:54px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .btn{background:var(--cyan);color:var(--navy);font-weight:800;font-size:32px;white-space:nowrap;border-radius:999px;padding:22px 42px;box-shadow:0 6px 0 rgba(0,10,60,.28)}
+  .contact{text-align:right;font-size:28px;line-height:1.35}
+  .contact strong{color:var(--gold);font-weight:700}
+  .go{display:flex;align-items:center;gap:28px;margin-top:60px;background:var(--cyan);color:var(--navy);border-radius:36px;padding:34px 38px;box-shadow:0 10px 0 rgba(0,10,60,.35);text-decoration:none}
+  .go .gt{flex:1}.go small{display:block;font-weight:800;font-size:24px;letter-spacing:.1em;text-transform:uppercase}
+  .go b{display:block;font-weight:800;font-size:52px;line-height:1.05;letter-spacing:-.01em}
+  .go .ga{flex:none;width:88px;height:88px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:52px;font-weight:800}
+  .footer{display:block;width:1080px;position:relative}
+  .qrc{display:flex;align-items:center;gap:30px;margin:26px 0 0;background:#fff;border-radius:32px;padding:22px 30px;text-decoration:none;color:var(--navy);box-shadow:0 8px 0 rgba(0,0,60,.22)}
+  .qrc img{width:170px;height:170px;flex:none;display:block}
+  .qrc small{display:block;font-family:var(--font);font-size:22px;font-weight:700;color:var(--blue)}
+  .qrc b{display:block;font-weight:800;font-size:46px;line-height:1.05;margin-top:4px;color:var(--navy)}
+  .qrc i{display:inline-block;margin-top:12px;font-style:normal;background:var(--navy);color:#fff;border-radius:999px;padding:7px 22px;font-size:26px;font-weight:700}
+
+  .nodes{position:absolute;left:520px;top:520px;width:508px}
+  .nodes svg{width:100%;display:block;overflow:visible}
+  .nodes p{font-weight:800;font-size:40px;line-height:1.12;margin-top:30px}
+  .mk{display:inline-block;margin-top:22px;background:#fff;border-radius:20px;padding:12px 26px;box-shadow:0 8px 0 rgba(0,10,60,.25)}
+  .mk img{height:54px;display:block}
+  .cases{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  .case{background:rgba(255,255,255,.10);border:2px solid rgba(255,255,255,.35);border-radius:26px;padding:24px 22px 26px}
+  .case small{display:block;font-weight:800;font-size:22px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .case b{display:block;font-weight:800;font-size:32px;line-height:1.12;margin-top:8px}
+  .sess{margin-top:22px}
+  .sess .card h3{min-height:0;font-size:42px}
+  .sess .date{font-size:30px;color:#fff;font-weight:700}
+  .tag2{margin-top:54px;background:var(--gold);color:var(--navy);border-radius:26px;padding:30px 36px;display:flex;align-items:center;gap:26px;box-shadow:0 8px 0 rgba(0,10,60,.28)}
+  .tag2 svg{flex:none;width:78px;height:78px}
+  .tag2 b{display:block;font-weight:800;font-size:46px;line-height:1.05}
+  .tag2 span{font-weight:600;font-size:28px}
+  .av{object-fit:cover;flex:none;width:190px;height:190px;border-radius:50%;background:linear-gradient(135deg,#0a4aa8,#1EB7FF);border:5px solid var(--cyan);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:72px}
+</style>
+</head>
+<body>
+<img class="bg" src="../propuesta-4/assets/bg-grid.svg" alt="" aria-hidden="true">
+
+<header class="hero">
+  <div class="chips"><span class="on">Gratuito</span><span>100 % virtual</span><span class="on">✓ Válido por 6 horas de corresponsabilidad</span></div>
+  <img class="logo" src="../propuesta-4/assets/logo-uifce-static-blanco.png" alt="Unidad de Informática FCE">
+  <img class="mascot" src="../propuesta-4/assets/uifcito-cierre.png" alt="Uifcito, el robot de la UIFCE">
+  <div class="title">
+    <p class="pre">Automatiza tareas repetitivas con</p>
+    <h1>Make</h1>
+    <p class="sub">Taller introductorio, sin programar<em>en 1 sesión virtual</em></p>
+  </div>
+  <div class="nodes">
+    <svg viewBox="0 0 508 150" aria-label="Flujo de nodos conectando Gmail, Sheets y Docs">
+      <path d="M96 75H254M254 75H412" stroke="#F7C32E" stroke-width="6" stroke-dasharray="3 12" stroke-linecap="round" fill="none"/>
+      <g font-family="Open Sans,Arial" font-weight="800" text-anchor="middle">
+        <circle cx="60" cy="75" r="44" fill="#fff"/><text x="60" y="92" font-size="46" fill="#d93025">M</text>
+        <circle cx="254" cy="75" r="44" fill="#fff"/><text x="254" y="92" font-size="46" fill="#188038">&#8801;</text>
+        <circle cx="448" cy="75" r="44" fill="#fff"/><text x="448" y="92" font-size="46" fill="#1a73e8">&#9636;</text>
+        <text x="60" y="144" font-size="22" fill="#fff">Gmail</text><text x="254" y="144" font-size="22" fill="#fff">Sheets</text><text x="448" y="144" font-size="22" fill="#fff">Docs</text>
+      </g>
+    </svg>
+    <p>Conecta tus aplicaciones con flujos visuales</p>
+    <div class="mk"><img src="../propuesta-4/assets/logo-make.svg" alt="Make"></div>
+  </div>
+</header>
+
+<main class="body">
+  <div class="sess"><article class="card"><small>Sesión única</small><h3>Construye tus primeros flujos de automatización</h3><div class="date">Vie. 27 nov · 10 a. m. – 12 m.</div></article></div>
+
+  <div class="hours">
+    <svg viewBox="0 0 50 50" fill="none" stroke="#04255f" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="25" cy="25" r="20"/><path d="M15 26l7 7 13-15"/></svg>
+    <div><b>Válido por 6 horas de corresponsabilidad</b></div>
+  </div>
+
+  <div class="mon" style="margin-top:44px">
+    <img class="av" src="../propuesta-4/assets/juan-david-delgado.jpg" alt="Juan David Delgado">
+    <div><small>Quien dicta</small><b>Juan David Delgado</b><span>Estudiante de Economía</span></div>
+  </div>
+
+  <a class="qrc" href="https://forms.gle/hXGjtYPSuMEmFQGD8" target="_blank" rel="noopener" style="margin-top:54px"><img src="../propuesta-4/assets/qr-make-formulario.svg" alt="Código QR al formulario de inscripción"><span><small>Escanea el QR</small><b>Inscríbete gratis</b><i>forms.gle/hXGjtYPSuMEmFQGD8</i></span></a>
+  <div class="cta" style="justify-content:flex-end">
+    <div class="contact"><strong>uniic_bog@unal.edu.co</strong><br>Tel. 316 5000, ext. 12301<br>LinkedIn: <strong>linkedin.com/in/uifce</strong></div>
+  </div>
+</main>
+
+<img class="footer" src="../propuesta-4/assets/footer.png" alt="Unidad Informática Sede Bogotá · Facultad de Ciencias Económicas · Universidad Nacional de Colombia">
+</body>
+</html>
