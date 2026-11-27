@@ -86,6 +86,19 @@
   .tag2 b{display:block;font-weight:800;font-size:46px;line-height:1.05}
   .tag2 span{font-weight:600;font-size:28px}
   .av{object-fit:cover;flex:none;width:190px;height:190px;border-radius:50%;background:linear-gradient(135deg,#0a4aa8,#1EB7FF);border:5px solid var(--cyan);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:72px}
+  .mh{margin-top:54px;font-weight:800;font-size:46px;line-height:1.1;letter-spacing:-.01em;color:#fff}
+  .pf{margin-top:22px;background:#fff;color:var(--navy);border-radius:30px;overflow:hidden;box-shadow:0 8px 0 rgba(0,10,60,.28)}
+  .pf .cover{position:relative;line-height:0}
+  .pf .cv{display:block;width:100%}
+  .pf .av2{position:absolute;left:36px;bottom:-84px;width:190px;height:190px;border-radius:50%;object-fit:cover;object-position:60% 25%;border:7px solid #fff;background:#fff}
+  .pf .pb{padding:104px 36px 34px}
+  .pf h3{font-weight:800;font-size:46px;line-height:1.08;letter-spacing:-.01em}
+  .pf p{font-size:28px;line-height:1.35;margin-top:8px;font-weight:600;color:#42507a}
+  .pf .loc{font-size:24px;margin-top:10px;color:#5a6690}
+  .pf .btns{display:flex;gap:14px;margin-top:22px}
+  .pf .btns span{font-weight:700;font-size:25px;border-radius:999px;padding:10px 30px}
+  .pf .b1{background:var(--blue);color:#fff}
+  .pf .b2{border:3px solid var(--blue);color:var(--blue)}
 </style>
 </head>
 <body>
@@ -123,12 +136,16 @@
     <div><b>Válido por 6 horas de corresponsabilidad</b></div>
   </div>
 
-  <div class="mon" style="margin-top:44px">
-    <img class="av" src="../propuesta-4/assets/juan-david-delgado.jpg" alt="Juan David Delgado">
-    <div><small>Quien dicta</small><b>Juan David Delgado</b><span>Estudiante de Economía</span></div>
+  <h2 class="mh">Conoce a tu monitor UIFCE</h2>
+  <div class="pf">
+    <div class="cover"><img class="cv" src="../propuesta-4/assets/portada-uifce-linkedin.jpg" alt="UIFCE"><img class="av2" src="../propuesta-4/assets/juan-david-delgado.jpg" alt="Juan David Delgado Moreno, monitor UIFCE"></div>
+    <div class="pb">
+      <h3>Juan David Delgado Moreno</h3>
+      <p>Estudiante de Economía | Monitor UIFCE | Universidad Nacional de Colombia</p>
+      <div class="loc">Bogotá, Distrito Capital, Colombia</div>
+      <div class="btns"><span class="b1">Síguenos</span><span class="b2">linkedin.com/in/uifce</span></div>
+    </div>
   </div>
-
-  <img src="../propuesta-4/assets/linkedin-juan-david-uifce.png" alt="Perfil de LinkedIn de Juan David Delgado Moreno, estudiante de Economía" style="display:block;width:100%;margin-top:30px;border-radius:26px;box-shadow:0 8px 0 rgba(0,10,60,.28)">
 
   <a class="qrc" href="https://forms.gle/hXGjtYPSuMEmFQGD8" target="_blank" rel="noopener" style="margin-top:54px"><img src="../propuesta-4/assets/qr-make-formulario.svg" alt="Código QR al formulario de inscripción"><span><small>Escanea el QR</small><b>Inscríbete gratis</b><i>forms.gle/hXGjtYPSuMEmFQGD8</i></span></a>
   <div class="cta" style="justify-content:flex-end">
