@@ -1,0 +1,27 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>tv-04 automatización</title><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet"><style>
+:root{--navy:#04255f;--blue:#0a4aa8;--cyan:#1EB7FF;--gold:#F7C32E;--font:"Open Sans",system-ui,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px}
+body{position:relative;overflow:hidden;background:#073a8c;font-family:var(--font);color:#fff;line-height:1.25}
+.bg{position:absolute;left:0;top:0;width:100%;height:100%;z-index:0}
+.dots{position:absolute;left:0;top:0;width:55%;height:60%;background-image:radial-gradient(rgba(255,255,255,.2) 2.2px,transparent 2.6px);background-size:14px 14px;-webkit-mask-image:linear-gradient(100deg,#000 0,transparent 85%);mask-image:linear-gradient(100deg,#000 0,transparent 85%)}
+.z{position:absolute;z-index:2}
+.chip{display:inline-block;font-weight:800;border-radius:999px;padding:.3em .9em;background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.4);margin-right:12px}
+.chip.on{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.card{background:rgba(255,255,255,.10);border:2px solid rgba(255,255,255,.35);border-radius:30px}
+.gold{color:var(--gold)}
+.k{font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.white{background:#fff;color:var(--navy);box-shadow:0 8px 0 rgba(0,10,60,.28)}
+.qrb{background:#fff;color:var(--navy);display:flex;align-items:center;box-shadow:0 8px 0 rgba(0,0,60,.25)}
+.qrb img{display:block;flex:none}
+.qrb small{display:block;font-weight:700;color:var(--blue)}
+.qrb b{display:block;font-weight:800;line-height:1.05}
+.qrb i{display:inline-block;font-style:normal;background:var(--navy);color:#fff;border-radius:999px;font-weight:700}
+</style></head><body><img class="bg" src="../propuesta-4/assets/bg-grid.svg" alt=""><div class="dots"></div><img class="z" src="../propuesta-4/assets/logo-uifce-static-blanco.png" alt="UIFCE" style="left:56px;top:44px;height:96px"><div class="z" style="left:310px;top:44px;height:96px;display:flex;align-items:center"><span class="chip on" style="margin:0;font-size:34px;line-height:1.15;border-radius:40px">✓ Válido por 8 horas de corresponsabilidad</span></div><div class="z" style="left:56px;top:170px;width:1400px"><div class="k" style="font-size:40px">En esta sesión</div>
+<h2 style="font-weight:800;font-size:112px;line-height:1.02;margin-top:8px">Lo que aprenderás</h2>
+<ul style="list-style:none;margin-top:30px;display:flex;flex-direction:column;gap:14px;font-size:50px;font-weight:700;line-height:1.15"><li><span class="gold">✓</span> Identificación de tareas repetitivas</li><li><span class="gold">✓</span> Automatización de flujos de trabajo</li><li><span class="gold">✓</span> Integración de formularios, hojas de cálculo y correos</li><li><span class="gold">✓</span> Ejercicio práctico de automatización</li></ul></div>
+<div class="z" style="left:56px;bottom:46px;width:1400px;display:flex;align-items:center;gap:50px"><div><svg viewBox="-50 0 900 220" width="800" aria-label="Formularios, hojas y correos"><path d="M130 85H330M470 85H670" stroke="#F7C32E" stroke-width="8" stroke-dasharray="4 16" stroke-linecap="round" fill="none"/>
+<g font-family="Open Sans,Arial" font-weight="800" text-anchor="middle"><circle cx="70" cy="85" r="66" fill="#fff"/><text x="70" y="110" font-size="70" fill="#1a73e8">&#9636;</text>
+<circle cx="400" cy="85" r="66" fill="#fff"/><text x="400" y="110" font-size="70" fill="#188038">&#8801;</text>
+<circle cx="730" cy="85" r="66" fill="#fff"/><text x="730" y="110" font-size="70" fill="#d93025">M</text>
+<text x="70" y="203" font-size="36" fill="#fff">Formularios</text><text x="400" y="203" font-size="36" fill="#fff">Hojas</text><text x="730" y="203" font-size="36" fill="#fff">Correos</text></g></svg></div></div><img class="z" src="../propuesta-4/assets/uifcito-cierre.png" alt="Uifcito" style="right:60px;top:120px;height:520px;filter:drop-shadow(0 22px 28px rgba(0,10,60,.45))"><div class="z qrb" style="right:48px;bottom:48px;border-radius:30px;padding:30px 40px;flex-direction:column;gap:8px;text-align:center"><small style="font-size:30px">Inscripciones</small><b style="font-size:44px">Próximamente</b></div></body></html>
